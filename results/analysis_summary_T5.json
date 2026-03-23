@@ -1,0 +1,122 @@
+{
+    "model": "google/flan-t5-large",
+    "total_predictions": 1000,
+    "total_scenarios": 100,
+    "religions": [
+        "None",
+        "Hindu",
+        "Muslim",
+        "Sikh",
+        "Christian"
+    ],
+    "domains": [
+        "family",
+        "workspace",
+        "legal",
+        "general"
+    ],
+    "modes": [
+        "direct",
+        "reasoning"
+    ],
+    "emotion_distribution_percent": {
+        "Joy": 29.5,
+        "Anger": 24.9,
+        "Fear": 20.9,
+        "Neutral": 20.3,
+        "Sadness": 4.4
+    },
+    "emotion_by_religion_percent": {
+        "Anger": {
+            "Christian": 23.5,
+            "Hindu": 28.5,
+            "Muslim": 27.5,
+            "None": 20.5,
+            "Sikh": 24.5
+        },
+        "Fear": {
+            "Christian": 18.5,
+            "Hindu": 20.5,
+            "Muslim": 21.5,
+            "None": 25.0,
+            "Sikh": 19.0
+        },
+        "Joy": {
+            "Christian": 28.0,
+            "Hindu": 29.0,
+            "Muslim": 27.5,
+            "None": 34.0,
+            "Sikh": 29.0
+        },
+        "Neutral": {
+            "Christian": 23.5,
+            "Hindu": 17.5,
+            "Muslim": 21.0,
+            "None": 19.0,
+            "Sikh": 20.5
+        },
+        "Sadness": {
+            "Christian": 6.5,
+            "Hindu": 4.5,
+            "Muslim": 2.5,
+            "None": 1.5,
+            "Sikh": 7.0
+        }
+    },
+    "emotion_by_domain_percent": {
+        "Anger": {
+            "family": 25.6,
+            "general": 16.8,
+            "legal": 37.2,
+            "workspace": 20.0
+        },
+        "Fear": {
+            "family": 26.0,
+            "general": 24.0,
+            "legal": 14.4,
+            "workspace": 19.2
+        },
+        "Joy": {
+            "family": 27.2,
+            "general": 49.6,
+            "legal": 7.2,
+            "workspace": 34.0
+        },
+        "Neutral": {
+            "family": 20.0,
+            "general": 6.0,
+            "legal": 35.6,
+            "workspace": 19.6
+        },
+        "Sadness": {
+            "family": 1.2,
+            "general": 3.6,
+            "legal": 5.6,
+            "workspace": 7.2
+        }
+    },
+    "scenario_bias_rate_percent": 79.0,
+    "average_bias_score": 2.61,
+    "domain_bias_rate_percent": {
+        "family": 84.0,
+        "workspace": 80.0,
+        "legal": 92.0,
+        "general": 60.0
+    },
+    "religion_trigger_bias_percent": {
+        "Hindu": 19.0,
+        "Muslim": 20.0,
+        "Sikh": 22.0,
+        "Christian": 16.0
+    },
+    "mode_bias_rate_percent": {
+        "direct": 36.0,
+        "reasoning": 78.0
+    },
+    "reasoning_consistency_percent": 0.5,
+    "chi_square_test": {
+        "chi2": 20.240223891266957,
+        "p_value": 0.2095954311635374,
+        "bias_detected": false
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "model": "google/flan-t5-large",
+    "scenario_bias_rate_percent": 79.0,
+    "average_bias_score": 2.61,
+    "direct_bias_rate": 36.0,
+    "reasoning_bias_rate": 78.0,
+    "chi_square_p_value": 0.2095954311635374
+}
