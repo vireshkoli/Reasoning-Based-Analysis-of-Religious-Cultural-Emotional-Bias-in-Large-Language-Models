@@ -1,0 +1,305 @@
+{
+  "models": [
+    "t5",
+    "sarvam"
+  ],
+  "t5_encoder_lss_peak": {
+    "layer": 0,
+    "value": 0.2920991975814104,
+    "relative_position": 0.0
+  },
+  "t5_decoder_lss_peak": {
+    "layer": 0,
+    "value": 0.44572194747626775,
+    "relative_position": 0.0
+  },
+  "sarvam_decoder_lss_peak": {
+    "layer": 0,
+    "value": 0.22770875791553408,
+    "relative_position": 0.0
+  },
+  "cka_mapping_t5_encoder_vs_sarvam_decoder": [
+    {
+      "t5_layer": 0,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.9277874231338501
+    },
+    {
+      "t5_layer": 1,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.18373802304267883
+    },
+    {
+      "t5_layer": 2,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.1671939343214035
+    },
+    {
+      "t5_layer": 3,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.162248894572258
+    },
+    {
+      "t5_layer": 4,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.15595273673534393
+    },
+    {
+      "t5_layer": 5,
+      "sarvam_layer": 25,
+      "cka_similarity": 0.05384816601872444
+    },
+    {
+      "t5_layer": 6,
+      "sarvam_layer": 25,
+      "cka_similarity": 0.054054923355579376
+    },
+    {
+      "t5_layer": 7,
+      "sarvam_layer": 25,
+      "cka_similarity": 0.06407877802848816
+    },
+    {
+      "t5_layer": 8,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.21484895050525665
+    },
+    {
+      "t5_layer": 9,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.21494770050048828
+    },
+    {
+      "t5_layer": 10,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.21507877111434937
+    },
+    {
+      "t5_layer": 11,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.21515747904777527
+    },
+    {
+      "t5_layer": 12,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.21535144746303558
+    },
+    {
+      "t5_layer": 13,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.21547210216522217
+    },
+    {
+      "t5_layer": 14,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.215611070394516
+    },
+    {
+      "t5_layer": 15,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.21575680375099182
+    },
+    {
+      "t5_layer": 16,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.21596458554267883
+    },
+    {
+      "t5_layer": 17,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.2159532904624939
+    },
+    {
+      "t5_layer": 18,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.2160864919424057
+    },
+    {
+      "t5_layer": 19,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.21632520854473114
+    },
+    {
+      "t5_layer": 20,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.21663494408130646
+    },
+    {
+      "t5_layer": 21,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.21662349998950958
+    },
+    {
+      "t5_layer": 22,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.2177104353904724
+    },
+    {
+      "t5_layer": 23,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.21790474653244019
+    },
+    {
+      "t5_layer": 24,
+      "sarvam_layer": 0,
+      "cka_similarity": 0.8356631994247437
+    }
+  ],
+  "cka_mapping_t5_decoder_vs_sarvam_decoder": [
+    {
+      "t5_layer": 0,
+      "sarvam_layer": 7,
+      "cka_similarity": 0.07364580780267715
+    },
+    {
+      "t5_layer": 1,
+      "sarvam_layer": 7,
+      "cka_similarity": 0.07245275378227234
+    },
+    {
+      "t5_layer": 2,
+      "sarvam_layer": 7,
+      "cka_similarity": 0.0643085315823555
+    },
+    {
+      "t5_layer": 3,
+      "sarvam_layer": 7,
+      "cka_similarity": 0.059240538626909256
+    },
+    {
+      "t5_layer": 4,
+      "sarvam_layer": 25,
+      "cka_similarity": 0.04764758050441742
+    },
+    {
+      "t5_layer": 5,
+      "sarvam_layer": 7,
+      "cka_similarity": 0.0364128053188324
+    },
+    {
+      "t5_layer": 6,
+      "sarvam_layer": 26,
+      "cka_similarity": 0.03385541960597038
+    },
+    {
+      "t5_layer": 7,
+      "sarvam_layer": 8,
+      "cka_similarity": 0.0435970239341259
+    },
+    {
+      "t5_layer": 8,
+      "sarvam_layer": 8,
+      "cka_similarity": 0.044428933411836624
+    },
+    {
+      "t5_layer": 9,
+      "sarvam_layer": 8,
+      "cka_similarity": 0.0455908328294754
+    },
+    {
+      "t5_layer": 10,
+      "sarvam_layer": 25,
+      "cka_similarity": 0.045856624841690063
+    },
+    {
+      "t5_layer": 11,
+      "sarvam_layer": 25,
+      "cka_similarity": 0.04655691981315613
+    },
+    {
+      "t5_layer": 12,
+      "sarvam_layer": 25,
+      "cka_similarity": 0.045858435332775116
+    },
+    {
+      "t5_layer": 13,
+      "sarvam_layer": 25,
+      "cka_similarity": 0.04699361324310303
+    },
+    {
+      "t5_layer": 14,
+      "sarvam_layer": 25,
+      "cka_similarity": 0.04834578558802605
+    },
+    {
+      "t5_layer": 15,
+      "sarvam_layer": 25,
+      "cka_similarity": 0.04965513199567795
+    },
+    {
+      "t5_layer": 16,
+      "sarvam_layer": 25,
+      "cka_similarity": 0.052360668778419495
+    },
+    {
+      "t5_layer": 17,
+      "sarvam_layer": 25,
+      "cka_similarity": 0.0553838387131691
+    },
+    {
+      "t5_layer": 18,
+      "sarvam_layer": 25,
+      "cka_similarity": 0.0630134716629982
+    },
+    {
+      "t5_layer": 19,
+      "sarvam_layer": 26,
+      "cka_similarity": 0.06505279988050461
+    },
+    {
+      "t5_layer": 20,
+      "sarvam_layer": 26,
+      "cka_similarity": 0.07841848582029343
+    },
+    {
+      "t5_layer": 21,
+      "sarvam_layer": 26,
+      "cka_similarity": 0.08246251195669174
+    },
+    {
+      "t5_layer": 22,
+      "sarvam_layer": 25,
+      "cka_similarity": 0.10280171036720276
+    },
+    {
+      "t5_layer": 23,
+      "sarvam_layer": 8,
+      "cka_similarity": 0.11937139928340912
+    },
+    {
+      "t5_layer": 24,
+      "sarvam_layer": 25,
+      "cka_similarity": 0.08763851225376129
+    }
+  ],
+  "religion_comparison": {
+    "Muslim": {
+      "t5_encoder_peak": 0,
+      "t5_encoder_max": 0.2645687011629343,
+      "sarvam_decoder_peak": 0,
+      "sarvam_decoder_max": 0.20053390625864267
+    },
+    "Hindu": {
+      "t5_encoder_peak": 0,
+      "t5_encoder_max": 0.27823268733918666,
+      "sarvam_decoder_peak": 0,
+      "sarvam_decoder_max": 0.1960913764126599
+    },
+    "Sikh": {
+      "t5_encoder_peak": 1,
+      "t5_encoder_max": 0.3967232504859567,
+      "sarvam_decoder_peak": 0,
+      "sarvam_decoder_max": 0.28644395276904105
+    },
+    "Christian": {
+      "t5_encoder_peak": 0,
+      "t5_encoder_max": 0.2903359504044056,
+      "sarvam_decoder_peak": 0,
+      "sarvam_decoder_max": 0.2277657962217927
+    }
+  },
+  "depth_similarity": {
+    "similar": true,
+    "difference": 0.0
+  }
+}

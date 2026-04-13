@@ -1,0 +1,741 @@
+================================================================
+  DETAILED EXPLANATION OF ALL TECHNICAL PLOTS
+  Project: Religion-Conditioned Emotional Bias in LLMs
+  Models: FLAN-T5-Large (Encoder-Decoder) | Sarvam-2B (Decoder-only)
+  Folder: results/phase3/plots/
+  Total: 14 plots
+================================================================
+
+These plots come from Phase 3 of the study, which goes INSIDE the
+neural network to understand HOW and WHERE religion-based bias is
+created. Think of it like doing an MRI of the model's brain to find
+which specific part causes the biased behavior.
+
+================================================================
+QUICK BACKGROUND: KEY CONCEPTS
+================================================================
+
+HIDDEN STATE:
+  Every transformer layer takes in a vector of numbers (the hidden
+  state) and outputs a modified version. This vector "represents"
+  what the model understands at that point. We can analyze these
+  vectors to understand what the model is "thinking" at each layer.
+
+LAYER ABLATION (BYPASSING A LAYER):
+  We "turn off" a layer by making it output exactly what it received
+  as input (as if the layer did nothing). If the bias disappears
+  after turning off a layer, that layer was causing the bias.
+
+PROBING CLASSIFIER:
+  A simple linear model trained on the hidden states from one layer
+  to predict either the emotion or the religion. If it can predict
+  religion with 70% accuracy, that layer "encodes" religion information.
+  Random chance = 20% (5 classes).
+
+ATTENTION:
+  At each layer, the model "pays attention" to different parts of
+  the input. Attention entropy measures how SPREAD OUT this attention
+  is — high entropy = attention spread everywhere, low entropy =
+  attention focused on just a few words.
+
+RTAS (Religion Token Attention Score):
+  For each attention head, how much does it focus specifically on
+  the religion words (e.g., "Hindu", "Muslim") in the prompt?
+  High RTAS = that head is a "religion detector" head.
+
+CKA (Centered Kernel Alignment):
+  A number from 0 to 1 measuring how similar two sets of hidden
+  states are. CKA=1 means the representations are identical.
+  CKA=0 means completely different. Used to compare T5 and Sarvam.
+
+LSS (Layer-wise Sensitivity Score):
+  For each layer, how much do the hidden states CHANGE when religion
+  is injected vs. not injected? Higher LSS = this layer is more
+  affected by the religion context.
+
+LBS (Layer-wise Bias Score):
+  Does this layer treat religions DIFFERENTLY? High LBS means the
+  layer produces very different hidden states for Hindu vs. Muslim
+  vs. Sikh vs. Christian prompts (differential treatment).
+
+================================================================
+PLOT 1 — lss_curves_all.png
+"How Much Does Religion Change the Model Internally? (LSS)"
+================================================================
+
+WHAT THE PLOT SHOWS:
+  Three side-by-side panels. Each panel has multiple colored lines
+  (one per religion: Hindu, Muslim, Sikh, Christian) plus an average
+  (black dashed) showing the Layer-wise Sensitivity Score (LSS).
+
+  The x-axis runs from 0 to 1 (normalized layer depth — 0 = first
+  layer, 1 = last layer). This lets you compare T5 and Sarvam on
+  the same scale even though they have different numbers of layers.
+  The y-axis is the LSS value — how much the hidden state shifts.
+
+  Panel 1 = T5 Encoder (processes the input prompt)
+  Panel 2 = T5 Decoder (generates the output)
+  Panel 3 = Sarvam Decoder (processes everything in one pass)
+
+HOW TO READ IT:
+  - A peak at a certain layer = religion changes the internal
+    representation most at that layer.
+  - A flat line = the effect of religion is uniform across layers.
+  - If lines for different religions are far apart = different
+    religions affect the model differently.
+  - The formula is:
+    LSS = (distance between "religion" hidden state and "no religion"
+           hidden state) / (size of "no religion" hidden state)
+    So LSS=0.3 means the religion-injected hidden state is 30%
+    "farther away" from baseline than the baseline's own length.
+
+WHAT THE NUMBERS SHOW:
+
+  T5 ENCODER (Panel 1):
+    Layer 0 (first): LSS = 0.29 — immediately affected by religion
+    Layers 1-7: drops from 0.26 → 0.17 (effect diminishing)
+    Layers 8-22: plateau at ~0.12 (low but persistent background effect)
+    Layer 24 (last): 0.21 (slight increase — embedding layer output)
+    → Religion context enters at the very first layer and stays
+      throughout, but its direct impact decreases after early layers.
+
+  T5 DECODER (Panel 2):
+    Layer 0 (first): LSS = 0.45 — highest of all! The very first
+      decoder step is most strongly affected.
+    Layer 1: drops to 0.30
+    Layer 7: drops to 0.06
+    Layers 8-23: flat at 0.04-0.06 (low but nonzero)
+    → The decoder picks up the religion signal strongly at the start
+      (from the encoder's output) then processes it away quickly.
+
+  SARVAM DECODER (Panel 3):
+    Layer 0 (first): LSS = 0.23
+    Layer 1: drops sharply to 0.04
+    Layers 2-6: rises slightly to 0.04-0.06
+    Layers 7-16: gradually rises to ~0.07-0.08
+    Layer 28 (last): 0.02 (drops at the very end)
+    → Sarvam's sensitivity is lower and more evenly distributed
+      than T5's decoder. No single layer dominates.
+
+KEY INSIGHT:
+  Both models are most sensitive to religion at the very first layer.
+  Religion information enters immediately and is not introduced
+  gradually. T5's decoder shows the strongest single-layer peak
+  (LSS=0.45 at layer 0). Sarvam's sensitivity is more spread out.
+  The per-religion lines being close together means all four
+  religions cause similar AMOUNTS of change (just different
+  DIRECTIONS — that's what LBS measures next).
+
+================================================================
+PLOT 2 — lbs_curves_all.png
+"Does the Model Treat Different Religions Differently? (LBS)"
+================================================================
+
+WHAT THE PLOT SHOWS:
+  Same three-panel layout as LSS. Each panel shows the Layer-wise
+  Bias Score (LBS) — the variance (spread) in how much the hidden
+  states change across religions at each layer.
+
+  Think of it this way:
+  - LSS asked: "How much does religion change things overall?"
+  - LBS asks: "Is the change DIFFERENT for each religion?"
+  - High LBS = the model is treating Hindu differently from Muslim,
+    differently from Christian, etc. (this IS the bias)
+
+HOW TO READ IT:
+  - A flat low line = all religions cause similar shifts (equal treatment)
+  - A sharp spike = some religions cause much larger shifts than others
+    at that layer — differential treatment = bias
+  - The scale of LBS values is in raw squared units (not normalized),
+    so absolute numbers differ between panels, but the SHAPE matters.
+
+WHAT THE NUMBERS SHOW:
+
+  T5 ENCODER (Panel 1):
+    Layers 0-6: very low (LBS ~ 1,600-7,700)
+    Layer 7: jumps to 16,000
+    Layer 19: peaks at ~41,523,368
+    → A dramatic rise in mid-to-late encoder layers, meaning the
+      encoder starts treating religions differently at deeper layers.
+    Note: The very large absolute values are due to unnormalized
+    variance computation; the important thing is the relative rise.
+
+  T5 DECODER (Panel 2):
+    Layers 0-5: low (LBS ~ 1,600-7,700)
+    Layer 6: jumps to 16,000
+    Layer 7: spikes to 115,654
+    Layers 7-23: stays very high (110,000-170,000)
+    Layer 24 (last): drops to 2.6 — back to near zero
+    → The T5 decoder introduces large religion-specific differences
+      starting at layer 6-7 and keeps them all the way to the end.
+      This matches perfectly with the ablation result that Decoder
+      Layer 6 is the single most important bias layer (LCS=+83%).
+      The spike starting at exactly layer 6-7 is strong evidence
+      that something fundamental happens there.
+
+  SARVAM DECODER (Panel 3):
+    Layers 0-2: near zero (LBS < 1)
+    Layers 3-6: small rise (~1.8-4.5)
+    Layer 7: rises to 61
+    Layer 9: 177
+    Layers 10-20: builds to ~433-443 (peak at layer 17)
+    Layer 28 (last): drops to 3.7
+    → Sarvam builds up differential treatment gradually from layer 7
+      onwards, peaking in the middle layers (13-20), then cleaning
+      up somewhat at the very end. A much more gradual build-up
+      compared to T5's sudden spike.
+
+KEY INSIGHT:
+  Both models INTRODUCE religion-specific bias at specific layers:
+  - T5: sudden spike at Decoder Layer 6-7 (matches ablation results)
+  - Sarvam: gradual build-up from Layer 7-17
+  At the very last layer, LBS drops back near zero in both models —
+  suggesting the final layer somewhat "normalizes" the representations,
+  but the damage to the output prediction has already been done by
+  then. The layers just before the output (T5 dec 7-23, Sarvam 10-20)
+  carry the religion-differentiated representations.
+
+================================================================
+PLOT 3 — probing_curves_all.png
+"When Does the Model Decide the Emotion / Know the Religion?"
+================================================================
+
+WHAT THE PLOT SHOWS:
+  Three panels. Each panel has two lines:
+    Orange/red  = "emotion probe" — can we predict the final emotion
+                  from the hidden state at this layer?
+    Blue/green  = "religion probe" — can we predict which religion
+                  was in the prompt from the hidden state?
+  Gray dotted line at 20% = random chance (5 classes, random guessing)
+
+  A logistic regression (simple linear classifier) is trained on
+  the mean-pooled hidden states of each layer using 5-fold cross-
+  validation. High accuracy = that layer "contains" the information.
+
+HOW TO READ IT:
+  - Sharp jump from low to high = that layer is where the model
+    "decides" something (encodes new information).
+  - Flat high line = information is present throughout and persists.
+  - Flat low line (near 20%) = that section doesn't contain the info.
+
+WHAT THE NUMBERS SHOW:
+
+  T5 ENCODER (Panel 1):
+    Religion probe: starts at 61.2% (layer 0) → stays at 60-63%
+      across all 25 encoder layers.
+      → Religion is encoded from the very first encoder layer
+        and never forgotten throughout the encoder.
+    Emotion probe: starts at 52.0% → stays at 50-53% throughout.
+      → Some emotion information is also present from the start
+        (due to the emotion-relevant scenario content), but accuracy
+        is low — the encoder doesn't strongly predict final emotion.
+
+  T5 DECODER (Panel 2):
+    Religion probe: layer 0 = 17.7% (BELOW random chance!)
+      → The very first decoder embedding has almost NO religion info.
+      Layer 1: jumps to 59.9%
+      → Suddenly, the religion is "known" to the decoder at layer 1.
+      Layers 1-24: stays at 54-60%
+      → Religion stays encoded throughout the decoder.
+    Emotion probe: layer 0 = 25.6%
+      Layer 1: jumps to 47.1%
+      Layers 1-24: stays at 48-51%
+      → Same pattern — both emotion and religion flood into the
+        decoder at layer 1 (from the encoder's cross-attention output).
+
+  SARVAM DECODER (Panel 3):
+    Religion probe: layer 0 = 65.9% → stays at 66-69% throughout 28 layers
+      → Sarvam encodes religion immediately and holds it the whole way.
+    Emotion probe: layer 0 = 69.5% → stays at 70-73% throughout
+      → Sarvam also has the highest emotion probing accuracy — it
+        is better at "knowing" the emotion in its hidden states
+        than T5 is. This correlates with Sarvam's higher bias rate.
+
+KEY INSIGHT:
+  The most striking result: in the T5 decoder, religion and emotion
+  information appears at layer 1 (below random at layer 0, then
+  jumps to 60%). This is NOT because layer 1 "detects" religion —
+  it's because layer 1 is where cross-attention brings in the
+  encoder's knowledge into the decoder's hidden states.
+  For Sarvam, there is no such jump — it starts with full knowledge
+  from layer 0 because everything (input + output) is in one sequence.
+  This confirms that NO LAYER introduces religion information —
+  it is present from the START and persists throughout all layers.
+
+================================================================
+PLOT 4 — lss_religion_heatmap.png
+"Which Religion Causes the Biggest Internal Change at Which Layer?"
+================================================================
+
+WHAT THE PLOT SHOWS:
+  Two heatmaps side by side — one for T5, one for Sarvam.
+  Rows = religions (Christian, Hindu, Muslim, Sikh)
+  Columns = layers (normalized 0→1)
+  Color = LSS value for that specific religion at that layer
+    Dark red = high LSS (large change caused by this religion)
+    Light/white = low LSS (small change)
+
+  This is the per-religion version of the LSS curves — it shows
+  whether different religions cause different amounts of internal
+  change (not just different directions).
+
+HOW TO READ IT:
+  - A row that is uniformly dark = that religion always causes
+    large internal changes across all layers.
+  - A column that is uniformly dark = all religions cause large
+    changes at that specific layer depth.
+  - A bright cell at row "Christian", column 0.1 = Christian context
+    causes much more hidden state displacement than other religions
+    at early layers.
+
+WHAT THE NUMBERS SHOW:
+
+  T5:
+    All religions show highest LSS at very early layers (left side
+    of heatmap, normalized depth 0-0.1).
+    Christian: slightly higher LSS at early encoder layers (0.425)
+      vs. Hindu (0.293), Muslim (0.281), Sikh (0.246)
+    The heatmap should show a gradient from dark on the left to
+    lighter toward the middle-right, with a slight uptick at the
+    very end (last layer).
+    Per-religion differences are small — the BIG differences are
+    in LBS, not LSS (religions cause similar AMOUNTS of change,
+    just different DIRECTIONS).
+
+  SARVAM:
+    Sikh shows the highest LSS at layer 0 (0.286) compared to
+    Christian (0.228), Muslim (0.201), Hindu (0.196).
+    The pattern flattens quickly after layer 1.
+    Note: This contrast with the ablation results (Muslim has
+    highest trigger bias at 14% for Sarvam) shows that "amount
+    of change" and "whether it changes the emotion prediction"
+    are different things — Sikh causes large hidden state shifts
+    but may shift in a direction that doesn't always flip the
+    emotion, while Muslim causes smaller but more targeted shifts.
+
+KEY INSIGHT:
+  The heatmap shows religion effects are strongest at early layers
+  and fade toward the middle. Christian causes slightly larger
+  raw displacement in T5's encoder early layers, consistent with
+  the Phase 2 finding that Christian context has the highest
+  trigger bias rate in T5 (30%). Sikh causes the largest raw
+  displacement in Sarvam but this doesn't translate directly to
+  the highest prediction change — showing that representation
+  displacement ≠ output change.
+
+================================================================
+PLOT 5 — attention_entropy_heatmap_t5.png
+"How Focused or Spread is T5's Attention at Each Layer?"
+================================================================
+
+WHAT THE PLOT SHOWS:
+  A heatmap for T5 showing attention entropy per layer.
+  Rows = layers (encoder layers 0-23, decoder layers 0-23,
+         cross-attention layers 0-23)
+  Columns = attention heads (0-15)
+  Color = entropy value
+    Red/warm = HIGH entropy (attention is spread across many tokens)
+    Blue/cool = LOW entropy (attention is focused on very few tokens)
+
+  Attention entropy is calculated from the attention weight matrix:
+    High entropy = each word attends to many other words equally
+    Low entropy = each word attends to just one or two specific words
+    → Low entropy = sharp, specialized attention
+    → High entropy = diffuse, general attention
+
+HOW TO READ IT:
+  - Bright red cells = heads that look at everything (no focus)
+  - Dark blue cells = heads that focus on specific tokens (specialists)
+  - A whole row of blue = that layer's heads are very selective
+  - A whole row of red = that layer processes very broadly
+
+WHAT THE NUMBERS SHOW:
+
+  T5 ENCODER:
+    Layer 0: entropy ≈ 1.89 (medium — some focus)
+    Layer 1: entropy ≈ 0.55 (very low = very focused!)
+      → This stands out as a sharp dip in the encoder. Some heads
+        in layer 1 are extremely focused on specific tokens —
+        this includes Head 9 which has RTAS=0.96 (explained in
+        Plot 7). Layer 1 appears to be where religion tokens get
+        identified and attended to specifically.
+    Layers 2-23: entropy ≈ 2.0-2.4 (diffuse, spread attention)
+      → The rest of the encoder is doing general contextual
+        processing with broad attention patterns.
+
+  T5 DECODER:
+    All decoder layers: entropy ≈ 0.18-0.40 (very low throughout)
+      → The decoder's self-attention is extremely focused — it
+        looks at very few tokens at each step. The most focused
+        is Layer 9 Head 10 (entropy=0.004!) — essentially attending
+        to exactly one token.
+      → This makes sense: in generation, each new token mainly
+        attends to the immediately preceding few tokens.
+    Notably, decoder attention gets slightly more diffuse toward
+    later layers (0.38-0.40 at layers 20-23 vs 0.18 at layer 9).
+
+  T5 CROSS-ATTENTION (encoder-to-decoder):
+    This is where the decoder reads from the encoder's output.
+    Values should also be shown in the plot, typically moderate
+    entropy (1.5-2.5) — the decoder reads from multiple encoder
+    positions to generate each output token.
+
+KEY INSIGHT:
+  T5's Encoder Layer 1 is a specialized "focusing" layer — it
+  sharpens attention onto specific tokens (including religion tokens,
+  as RTAS shows). The very low entropy in the decoder means the
+  output generation is highly deterministic and focused, explaining
+  why religion effects encoded in the hidden states translate
+  directly to output changes. Very focused attention = less room
+  for the model to "average out" biases.
+
+================================================================
+PLOT 6 — attention_entropy_heatmap_sarvam.png
+"How Focused or Spread is Sarvam's Attention at Each Layer?"
+================================================================
+
+WHAT THE PLOT SHOWS:
+  Same format as Plot 5 but for Sarvam's 28 decoder layers.
+  Each row = one layer, each column = one of the 16 attention heads.
+  Color = entropy (red=spread, blue=focused).
+
+HOW TO READ IT:
+  Same as Plot 5. Compare with T5 to understand architectural
+  differences in how attention patterns relate to bias.
+
+WHAT THE NUMBERS SHOW:
+
+  Layer 0: entropy ≈ 3.27 (very high — attention spread everywhere)
+    → The first layer of Sarvam looks at all tokens broadly. This
+      is common in early layers when the model is "taking in"
+      the full context.
+  Layers 1-2: entropy ≈ 2.86 (still high, slightly more focused)
+  Layers 3-6: drops to ≈ 1.74-1.77 (more focused)
+    → A notable sharpening happens around layers 3-6.
+  Layers 7-20: moderate and relatively stable (≈ 2.0-2.1)
+  Layers 21-25: drops again to ≈ 1.64-1.74 (focused again)
+    → A second focusing phase in late layers.
+  Most focused individual heads:
+    Layer 17, Head 6: entropy = 0.979 (very sharp focus)
+    Layer 12, Head 9: entropy = 1.063
+    → These "focused heads" in mid-to-late layers are candidates
+      for being specialist heads that handle specific linguistic
+      functions.
+
+COMPARISON WITH T5:
+  Sarvam's entropy values are systematically HIGHER than T5's
+  (T5 decoder: 0.18-0.40 vs. Sarvam: 1.64-3.27). This means
+  Sarvam has more diffuse attention — it looks at more tokens
+  simultaneously. This could explain why Sarvam's bias is more
+  distributed across layers (more "background" religion
+  awareness) rather than localized in one layer like T5.
+
+KEY INSIGHT:
+  Sarvam's attention is fundamentally more diffuse than T5's
+  decoder. This correlates with Sarvam's more distributed bias
+  pattern (multiple layers contributing) versus T5's highly
+  localized bias (one dominant layer). High entropy at layer 0
+  confirms Sarvam immediately processes the full context broadly,
+  which is why religion information is encoded from layer 0.
+
+================================================================
+PLOT 7 — rtas_bars_t5.png
+"Which T5 Attention Heads Focus on Religion Words?"
+================================================================
+
+WHAT THE PLOT SHOWS:
+  A bar chart showing the Religion Token Attention Score (RTAS) for
+  the top attention heads in T5. Each bar represents one specific
+  (layer, head) pair. The bar height shows RTAS — how much of that
+  head's attention weight is directed at the religion tokens
+  (the words "Hindu", "Muslim", "Sikh", "Christian" in the prompt).
+
+  RTAS = 0 means the head ignores religion tokens completely.
+  RTAS = 1 means the head attends ONLY to religion tokens.
+
+HOW TO READ IT:
+  - Tall bars = heads that are "religion detectors" — they notice
+    and attend to religion words.
+  - Bars labeled by encoder/decoder and layer number + head number.
+  - A head with very high RTAS but NOT contributing to bias in
+    ablation = it attends to religion but doesn't act on it.
+  - A head with high RTAS AND high LCS = it both attends to AND
+    uses religion information to influence predictions.
+
+WHAT THE NUMBERS SHOW:
+
+  TOP RELIGION-ATTENDING HEADS IN T5:
+    Encoder Layer 1, Head 9 : RTAS = 0.958 ← top of the chart
+    Encoder Layer 15, Head 9: RTAS = 0.949
+    Encoder Layer 17, Head 9: RTAS = 0.947
+    Encoder Layer 19, Head 9: RTAS = 0.946
+    Encoder Layer 16, Head 9: RTAS = 0.946
+    Encoder Layer 18, Head 9: RTAS = 0.945
+    Encoder Layer 23, Head 9: RTAS = 0.945
+    Encoder Layer 21, Head 9: RTAS = 0.944
+    Encoder Layer 7,  Head 9: RTAS = 0.943
+    Encoder Layer 22, Head 9: RTAS = 0.942
+
+  STRIKING FINDING: Head 9 appears in ALL top-10 spots across
+  many different encoder layers. This means:
+    → In T5, ENCODER HEAD 9 is a "religion specialist" that
+      consistently attends to religion tokens across nearly the
+      entire encoder (layers 1, 7, 15-23 all have Head 9 at top).
+    → With RTAS=0.96, this head spends 96% of its attention budget
+      on the religion tokens in the prompt.
+    → This is the same layer (Encoder Layer 1) where we saw very
+      low entropy (entropy=0.55 in Plot 5) — confirming that
+      Head 9 is the specific head causing that sharpening.
+
+  ALSO NOTABLE: All top heads are ENCODER heads. No decoder heads
+  appear in the top RTAS list for T5. This makes sense — the encoder
+  is responsible for processing the input prompt where religion words
+  appear. The decoder then inherits this information via cross-attention.
+
+KEY INSIGHT:
+  T5 has a single "dedicated religion detector" — Encoder Head 9 —
+  that persists across almost all encoder layers. This head reads
+  the religion context and "tags" it for downstream processing.
+  The ablation results show that DECODER Layer 6 is where this
+  tagged information is ACTED UPON (to change the emotion), but
+  ENCODER Head 9 is where it is initially NOTICED and encoded.
+
+================================================================
+PLOT 8 — rtas_bars_sarvam.png
+"Which Sarvam Attention Heads Focus on Religion Words?"
+================================================================
+
+WHAT THE PLOT SHOWS:
+  Same format as Plot 7 but for Sarvam's 28 decoder layers.
+  Bar chart of RTAS values for top (layer, head) pairs.
+
+HOW TO READ IT:
+  Same as Plot 7. Compare with T5 to see if a single dominant
+  "religion head" exists or if it is spread across many heads.
+
+WHAT THE NUMBERS SHOW:
+
+  TOP RELIGION-ATTENDING HEADS IN SARVAM:
+    Decoder Layer 27, Head 5 : RTAS = 0.770
+    Decoder Layer 2,  Head 7 : RTAS = 0.763
+    Decoder Layer 1,  Head 15: RTAS = 0.760
+    Decoder Layer 27, Head 4 : RTAS = 0.754
+    Decoder Layer 0,  Head 13: RTAS = 0.747
+    Decoder Layer 12, Head 11: RTAS = 0.747
+    Decoder Layer 12, Head 10: RTAS = 0.745
+    Decoder Layer 1,  Head 13: RTAS = 0.742
+    Decoder Layer 0,  Head 6 : RTAS = 0.739
+    Decoder Layer 10, Head 6 : RTAS = 0.738
+
+  KEY OBSERVATIONS:
+    1. No single head dominates like T5's Head 9.
+       Multiple different heads (heads 5, 7, 13, 15, 4, 11, 10, 6)
+       across different layers (0, 1, 2, 10, 12, 27) all have
+       similar RTAS values (~0.74-0.77).
+    2. RTAS values for Sarvam (~0.75) are lower than T5's (~0.95).
+       T5's Head 9 is a MORE specialized religion detector.
+    3. Religion-attending heads appear in early (0, 1, 2), middle
+       (10, 12), AND late (27) layers — across the full depth.
+    4. Layer 27 (second-to-last) appears twice — suggesting some
+       late-layer re-reading of religion tokens right before output.
+    5. Layers 0-2 (early) appearing in top list connects with the
+       ablation finding that Decoder Layers 0 and 12 are most
+       responsible for Sarvam's bias (LCS = +63% and +37%).
+
+COMPARISON WITH T5:
+  T5 = one dominant head (Head 9) in encoder, very high RTAS (~0.96)
+  Sarvam = multiple heads spread across layers, moderate RTAS (~0.75)
+  This matches the overall pattern: T5's bias is localized (one layer
+  does most of the work), Sarvam's bias is distributed (many layers
+  and heads contribute a little each).
+
+KEY INSIGHT:
+  Sarvam's religion processing is democratic — many heads share
+  the responsibility of tracking religion context. This redundancy
+  may explain why it is harder to reduce Sarvam's bias with a
+  single targeted intervention. Ablating any one head reduces bias
+  only by 10-15%, whereas in T5, ablating the single dominant
+  decoder layer reduces bias by 83%.
+
+================================================================
+PLOTS 9-11 — attention_grid_t5_s14.png,
+             attention_grid_t5_s62.png,
+             attention_grid_t5_s76.png
+"What Does T5 Pay Attention To? (Per-Scenario Attention Maps)"
+================================================================
+
+WHAT THESE PLOTS SHOW:
+  These are attention grid visualizations for T5 on three specific
+  high-bias scenarios: scenarios 14, 62, and 76 (selected because
+  they showed the most religion-sensitive predictions in Phase 2).
+
+  Each plot is a grid of attention heatmaps. Think of it as a matrix
+  where:
+    - Each row = one religion context (None, Hindu, Muslim, Sikh,
+                 Christian) — so 5 rows
+    - Each column = one attention head (out of 16) for a selected layer
+    - Each individual heatmap = a small matrix where rows are output
+      tokens and columns are input tokens; the brightness shows
+      how much attention is paid from each output token to each input token
+
+  Bright yellow/warm cells = high attention (the model looks there a lot)
+  Dark/blue cells = low attention (ignored)
+
+HOW TO READ IT:
+  - Look for DIFFERENCES across the rows (different religions).
+    If the patterns look the same for all 5 religions → no bias at
+    this layer/head. If patterns differ → this head responds to religion.
+  - Look for bright spots on the religion words in the input column.
+    That means the head is attending to "Hindu" or "Muslim" etc.
+  - A completely blank row = that head attends to nothing (ablated
+    or nearly dead).
+
+WHAT THESE SPECIFIC SCENARIOS ARE:
+  Scenario 14: A scenario from the dataset where T5 showed religion-
+    sensitive predictions across all 4 religions (selected because it
+    represents a high-bias case).
+  Scenario 62: Another high-bias scenario.
+  Scenario 76: Another high-bias scenario.
+  (The specific scenario text can be found in dataset/scenarios.json)
+
+WHAT TO LOOK FOR:
+  - In the encoder layers, Head 9 columns should show attention
+    concentrated on religion tokens — confirming the RTAS finding.
+  - In decoder layers, attention to the beginning of the sequence
+    (encoder context) vs. previously generated tokens tells us whether
+    the model is re-reading the religion context during generation.
+  - Rows for "Hindu" vs. "Muslim" vs. "Christian" showing different
+    attention patterns = direct visual evidence of biased processing.
+
+KEY INSIGHT:
+  These plots provide visual, qualitative confirmation of what the
+  numerical metrics show. They are the "smoking gun" — you can see
+  with your own eyes how the attention patterns shift when the only
+  thing that changes is the religion word in the prompt.
+
+================================================================
+PLOTS 12-14 — attention_grid_sarvam_s18.png,
+              attention_grid_sarvam_s26.png,
+              attention_grid_sarvam_s67.png
+"What Does Sarvam Pay Attention To? (Per-Scenario Attention Maps)"
+================================================================
+
+WHAT THESE PLOTS SHOW:
+  Same format as Plots 9-11 but for Sarvam on scenarios 18, 26,
+  and 67 — the three most bias-sensitive scenarios for Sarvam.
+
+  Since Sarvam is a decoder-only model, there is only one type of
+  attention (no cross-attention). The attention matrix shows how
+  each token in the full sequence (prompt + generated output)
+  attends to all previous tokens.
+
+HOW TO READ IT:
+  - The full sequence is much longer than T5's decoder (includes
+    the full reasoning chain in reasoning mode).
+  - Look for whether religion words in the early prompt receive
+    attention from later tokens (when the model is generating
+    the emotion label).
+  - Compare rows (religions) — if the model's attention to the
+    religion word when generating the final "Emotion:" token
+    differs across religions, that is direct visual bias evidence.
+
+WHAT TO LOOK FOR:
+  - Layer 0 and Layer 12 (the ablation-critical layers): do the
+    attention patterns look most different across religions here?
+  - Heads 5, 7, 11, 13, 15 (top RTAS heads from Plot 8): do these
+    columns show concentrated attention on religion tokens?
+  - Comparison across scenarios 18, 26, 67: does the religion
+    sensitivity appear in the same heads across all scenarios?
+    If yes, those heads are consistently responsible.
+
+KEY INSIGHT:
+  Sarvam's attention grids show more spread-out, diffuse patterns
+  compared to T5 (consistent with Plot 6 showing higher entropy).
+  The religion signal in Sarvam is not "stored" in a few bright
+  attention spots but is distributed across the entire context.
+  This diffuse encoding explains why Sarvam's bias is harder to
+  pin to a single layer or head.
+
+================================================================
+SUMMARY: HOW ALL 14 PLOTS CONNECT
+================================================================
+
+DETECTION LAYER (when does religion enter?):
+  Plot 3 (Probing Curves) → religion enters at layer 0 in both
+  models and never leaves (60-70% religion probe accuracy throughout)
+
+MEASUREMENT LAYER (how much does it affect representations?):
+  Plot 1 (LSS)  → strongest effect at early layers, fades toward middle
+  Plot 4 (LSS Heatmap) → Christian/Sikh cause slightly more raw shift
+
+DIFFERENTIATION LAYER (when does the model treat religions differently?):
+  Plot 2 (LBS) → T5 decoder starts differentiating at layer 6-7;
+                 Sarvam builds up gradually from layer 7-17
+
+ATTENTION LAYER (which heads are reading the religion words?):
+  Plot 7 (RTAS T5) → T5 Encoder Head 9 is the dedicated reader
+  Plot 8 (RTAS Sarvam) → Sarvam: multiple heads share the job
+  Plots 5-6 (Entropy) → T5 Enc Layer 1 sharpens on religion tokens;
+                        Sarvam spreads attention broadly
+
+VISUAL LAYER (what do the patterns look like?):
+  Plots 9-14 (Attention Grids) → visual evidence in specific scenarios
+
+COMBINED STORY:
+  1. Religion words in the prompt are noticed immediately by both
+     models (Layer 0 probing, RTAS, first-layer LSS peaks).
+  2. T5 uses a single dedicated head (Encoder Head 9) to "tag"
+     religion tokens; Sarvam uses many heads.
+  3. T5's bias is consolidated at one key processing layer
+     (Decoder Layer 6-7 — visible as a spike in LBS and confirmed
+     by ablation LCS=+83%).
+  4. Sarvam's bias builds gradually (LBS rising from layer 7-17)
+     with multiple contributing heads.
+  5. Both models "know" the religion throughout all layers, meaning
+     bias cannot be fixed by late-layer intervention — it must be
+     addressed at the representation level (early layers).
+
+================================================================
+TECHNICAL NOTES
+================================================================
+
+  Why are LBS values so large (thousands / millions)?
+    LBS is variance of the raw hidden state displacement vectors
+    (in absolute units of hidden dimension × float values). T5
+    uses 1024-dimensional vectors in float32, Sarvam uses 2048-
+    dimensional vectors. The absolute scale is less important than
+    the RELATIVE change across layers — the spike at T5 Decoder
+    Layer 6-7 stands out regardless of absolute units.
+
+  Why is T5 Encoder Layer 1 entropy so low (0.55)?
+    Encoder Head 9 is almost perfectly focused on the religion
+    tokens (RTAS=0.96) — it contributes to the average entropy
+    pulling layer 1's average way down. The other heads in layer 1
+    may have normal entropy; Head 9 is the outlier.
+
+  Why is Sarvam layer 0 entropy so high (3.27)?
+    Decoder-only models process the FULL sequence at once, so at
+    the first layer, every token has access to all other tokens and
+    attention is broadly distributed. T5's decoder, by contrast, is
+    generating tokens left-to-right and has fewer previous tokens
+    to attend to, leading to naturally lower entropy.
+
+  RTAS values for Sarvam (~0.75) vs T5 (~0.96) — why different scales?
+    In Sarvam, the sequence includes the FULL prompt plus the
+    generated text (potentially 200+ tokens). Even a head that
+    "prefers" religion tokens has many other tokens to attend to,
+    capping RTAS. T5's encoder processes only the input prompt
+    (shorter sequence), so a head can easily achieve near-100%
+    attention on the few religion tokens present.
+
+================================================================
+EXPERIMENTAL SETUP
+================================================================
+  - 100 scenarios × 5 religion contexts × 2 inference modes = 1000 samples
+  - Hidden state extraction: mean-pooled per layer, float32 stored as .npz
+  - Probing: LogisticRegression, C=1.0, 5-fold CV, balanced class weights
+  - Attention summary: entropy and RTAS computed for all 1000 samples;
+    full attention matrices stored for 100 subset (top-20 high-bias scenarios)
+  - CKA: linear CKA computed on all 1000 samples' pooled states
+  - RTAS baseline: religion tokens identified by tokenizing injection prefix
+================================================================

@@ -1,0 +1,580 @@
+Sun Apr 12 01:20:14 IST 2026: Monitor started (PID 52437)
+Sun Apr 12 01:20:14 IST 2026: Monitor started (PID 52437)
+2026-04-12 01:20:14 [SARVAM HEAD ABLATION] elapsed=21:11:39 cpu=34.6% | est ~13/80 heads (16%) | ~155min remaining | ETA 03:55 IST
+2026-04-12 01:20:14 [SARVAM HEAD ABLATION] elapsed=21:11:39 cpu=34.6% | est ~13/80 heads (16%) | ~155min remaining | ETA 03:55 IST
+2026-04-12 01:20:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 01:20:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 01:25:14 [SARVAM HEAD ABLATION] elapsed=21:16:39 cpu=28.3% | est ~15/80 heads (19%) | ~150min remaining | ETA 03:55 IST
+2026-04-12 01:25:14 [SARVAM HEAD ABLATION] elapsed=21:16:39 cpu=28.3% | est ~15/80 heads (19%) | ~150min remaining | ETA 03:55 IST
+2026-04-12 01:25:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 01:25:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 01:30:14 [SARVAM HEAD ABLATION] elapsed=21:21:39 cpu=43.8% | est ~17/80 heads (22%) | ~145min remaining | ETA 03:55 IST
+2026-04-12 01:30:14 [SARVAM HEAD ABLATION] elapsed=21:21:39 cpu=43.8% | est ~17/80 heads (22%) | ~145min remaining | ETA 03:55 IST
+2026-04-12 01:30:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 01:30:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 01:35:14 [SARVAM HEAD ABLATION] elapsed=21:26:39 cpu=41.7% | est ~19/80 heads (24%) | ~140min remaining | ETA 03:55 IST
+2026-04-12 01:35:14 [SARVAM HEAD ABLATION] elapsed=21:26:39 cpu=41.7% | est ~19/80 heads (24%) | ~140min remaining | ETA 03:55 IST
+2026-04-12 01:35:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 01:35:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 01:40:14 [SARVAM HEAD ABLATION] elapsed=21:31:39 cpu=20.6% | est ~21/80 heads (27%) | ~135min remaining | ETA 03:55 IST
+2026-04-12 01:40:14 [SARVAM HEAD ABLATION] elapsed=21:31:39 cpu=20.6% | est ~21/80 heads (27%) | ~135min remaining | ETA 03:55 IST
+2026-04-12 01:40:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 01:40:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 01:45:14 [SARVAM HEAD ABLATION] elapsed=21:36:39 cpu=43.6% | est ~24/80 heads (30%) | ~130min remaining | ETA 03:55 IST
+2026-04-12 01:45:14 [SARVAM HEAD ABLATION] elapsed=21:36:39 cpu=43.6% | est ~24/80 heads (30%) | ~130min remaining | ETA 03:55 IST
+2026-04-12 01:45:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 01:45:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 01:50:14 [SARVAM HEAD ABLATION] elapsed=21:41:39 cpu=42.3% | est ~26/80 heads (32%) | ~125min remaining | ETA 03:55 IST
+2026-04-12 01:50:14 [SARVAM HEAD ABLATION] elapsed=21:41:39 cpu=42.3% | est ~26/80 heads (32%) | ~125min remaining | ETA 03:55 IST
+2026-04-12 01:50:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 01:50:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 01:55:14 [SARVAM HEAD ABLATION] elapsed=21:46:39 cpu=36.8% | est ~28/80 heads (35%) | ~120min remaining | ETA 03:55 IST
+2026-04-12 01:55:14 [SARVAM HEAD ABLATION] elapsed=21:46:39 cpu=36.8% | est ~28/80 heads (35%) | ~120min remaining | ETA 03:55 IST
+2026-04-12 01:55:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 01:55:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 02:00:14 [SARVAM HEAD ABLATION] elapsed=21:51:39 cpu=43.8% | est ~30/80 heads (38%) | ~115min remaining | ETA 03:55 IST
+2026-04-12 02:00:14 [SARVAM HEAD ABLATION] elapsed=21:51:39 cpu=43.8% | est ~30/80 heads (38%) | ~115min remaining | ETA 03:55 IST
+2026-04-12 02:00:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 02:00:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 02:05:14 [SARVAM HEAD ABLATION] elapsed=21:56:39 cpu=43.4% | est ~32/80 heads (40%) | ~110min remaining | ETA 03:55 IST
+2026-04-12 02:05:14 [SARVAM HEAD ABLATION] elapsed=21:56:39 cpu=43.4% | est ~32/80 heads (40%) | ~110min remaining | ETA 03:55 IST
+2026-04-12 02:05:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 02:05:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 02:10:14 [SARVAM HEAD ABLATION] elapsed=22:01:39 cpu=44.9% | est ~34/80 heads (43%) | ~105min remaining | ETA 03:55 IST
+2026-04-12 02:10:14 [SARVAM HEAD ABLATION] elapsed=22:01:39 cpu=44.9% | est ~34/80 heads (43%) | ~105min remaining | ETA 03:55 IST
+2026-04-12 02:10:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 02:10:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 02:15:14 [SARVAM HEAD ABLATION] elapsed=22:06:39 cpu=16.7% | est ~36/80 heads (46%) | ~100min remaining | ETA 03:55 IST
+2026-04-12 02:15:14 [SARVAM HEAD ABLATION] elapsed=22:06:39 cpu=16.7% | est ~36/80 heads (46%) | ~100min remaining | ETA 03:55 IST
+2026-04-12 02:15:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 02:15:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 02:20:14 [SARVAM HEAD ABLATION] elapsed=22:11:39 cpu=43.9% | est ~39/80 heads (48%) | ~95min remaining | ETA 03:55 IST
+2026-04-12 02:20:14 [SARVAM HEAD ABLATION] elapsed=22:11:39 cpu=43.9% | est ~39/80 heads (48%) | ~95min remaining | ETA 03:55 IST
+2026-04-12 02:20:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 02:20:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 02:25:14 [SARVAM HEAD ABLATION] elapsed=22:16:39 cpu=15.7% | est ~41/80 heads (51%) | ~90min remaining | ETA 03:55 IST
+2026-04-12 02:25:14 [SARVAM HEAD ABLATION] elapsed=22:16:39 cpu=15.7% | est ~41/80 heads (51%) | ~90min remaining | ETA 03:55 IST
+2026-04-12 02:25:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 02:25:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 02:30:14 [SARVAM HEAD ABLATION] elapsed=22:21:39 cpu=27.1% | est ~43/80 heads (54%) | ~85min remaining | ETA 03:55 IST
+2026-04-12 02:30:14 [SARVAM HEAD ABLATION] elapsed=22:21:39 cpu=27.1% | est ~43/80 heads (54%) | ~85min remaining | ETA 03:55 IST
+2026-04-12 02:30:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 02:30:14 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 02:35:15 [SARVAM HEAD ABLATION] elapsed=22:26:40 cpu=30.5% | est ~45/80 heads (56%) | ~80min remaining | ETA 03:55 IST
+2026-04-12 02:35:15 [SARVAM HEAD ABLATION] elapsed=22:26:40 cpu=30.5% | est ~45/80 heads (56%) | ~80min remaining | ETA 03:55 IST
+2026-04-12 02:35:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 02:35:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 02:40:15 [SARVAM HEAD ABLATION] elapsed=22:31:40 cpu=39.5% | est ~47/80 heads (59%) | ~75min remaining | ETA 03:55 IST
+2026-04-12 02:40:15 [SARVAM HEAD ABLATION] elapsed=22:31:40 cpu=39.5% | est ~47/80 heads (59%) | ~75min remaining | ETA 03:55 IST
+2026-04-12 02:40:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 02:40:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 02:45:15 [SARVAM HEAD ABLATION] elapsed=22:36:40 cpu=44.5% | est ~49/80 heads (62%) | ~70min remaining | ETA 03:55 IST
+2026-04-12 02:45:15 [SARVAM HEAD ABLATION] elapsed=22:36:40 cpu=44.5% | est ~49/80 heads (62%) | ~70min remaining | ETA 03:55 IST
+2026-04-12 02:45:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 02:45:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 02:50:15 [SARVAM HEAD ABLATION] elapsed=22:41:40 cpu=31.6% | est ~51/80 heads (64%) | ~65min remaining | ETA 03:55 IST
+2026-04-12 02:50:15 [SARVAM HEAD ABLATION] elapsed=22:41:40 cpu=31.6% | est ~51/80 heads (64%) | ~65min remaining | ETA 03:55 IST
+2026-04-12 02:50:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 02:50:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 02:55:15 [SARVAM HEAD ABLATION] elapsed=22:46:40 cpu=45.8% | est ~54/80 heads (67%) | ~60min remaining | ETA 03:55 IST
+2026-04-12 02:55:15 [SARVAM HEAD ABLATION] elapsed=22:46:40 cpu=45.8% | est ~54/80 heads (67%) | ~60min remaining | ETA 03:55 IST
+2026-04-12 02:55:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 02:55:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 03:00:15 [SARVAM HEAD ABLATION] elapsed=22:51:40 cpu=28.5% | est ~56/80 heads (70%) | ~55min remaining | ETA 03:55 IST
+2026-04-12 03:00:15 [SARVAM HEAD ABLATION] elapsed=22:51:40 cpu=28.5% | est ~56/80 heads (70%) | ~55min remaining | ETA 03:55 IST
+2026-04-12 03:00:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 03:00:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 03:05:15 [SARVAM HEAD ABLATION] elapsed=22:56:40 cpu=49.0% | est ~58/80 heads (72%) | ~50min remaining | ETA 03:55 IST
+2026-04-12 03:05:15 [SARVAM HEAD ABLATION] elapsed=22:56:40 cpu=49.0% | est ~58/80 heads (72%) | ~50min remaining | ETA 03:55 IST
+2026-04-12 03:05:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 03:05:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 03:10:15 [SARVAM HEAD ABLATION] elapsed=23:01:40 cpu=39.8% | est ~60/80 heads (75%) | ~45min remaining | ETA 03:55 IST
+2026-04-12 03:10:15 [SARVAM HEAD ABLATION] elapsed=23:01:40 cpu=39.8% | est ~60/80 heads (75%) | ~45min remaining | ETA 03:55 IST
+2026-04-12 03:10:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 03:10:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 03:15:15 [SARVAM HEAD ABLATION] elapsed=23:06:40 cpu=45.0% | est ~62/80 heads (78%) | ~40min remaining | ETA 03:55 IST
+2026-04-12 03:15:15 [SARVAM HEAD ABLATION] elapsed=23:06:40 cpu=45.0% | est ~62/80 heads (78%) | ~40min remaining | ETA 03:55 IST
+2026-04-12 03:15:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 03:15:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 03:20:15 [SARVAM HEAD ABLATION] elapsed=23:11:40 cpu=32.2% | est ~64/80 heads (81%) | ~35min remaining | ETA 03:55 IST
+2026-04-12 03:20:15 [SARVAM HEAD ABLATION] elapsed=23:11:40 cpu=32.2% | est ~64/80 heads (81%) | ~35min remaining | ETA 03:55 IST
+2026-04-12 03:20:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 03:20:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 03:25:15 [SARVAM HEAD ABLATION] elapsed=23:16:40 cpu=40.6% | est ~66/80 heads (83%) | ~30min remaining | ETA 03:55 IST
+2026-04-12 03:25:15 [SARVAM HEAD ABLATION] elapsed=23:16:40 cpu=40.6% | est ~66/80 heads (83%) | ~30min remaining | ETA 03:55 IST
+2026-04-12 03:25:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 03:25:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 03:30:15 [SARVAM HEAD ABLATION] elapsed=23:21:40 cpu=36.2% | est ~69/80 heads (86%) | ~25min remaining | ETA 03:55 IST
+2026-04-12 03:30:15 [SARVAM HEAD ABLATION] elapsed=23:21:40 cpu=36.2% | est ~69/80 heads (86%) | ~25min remaining | ETA 03:55 IST
+2026-04-12 03:30:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 03:30:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 03:35:15 [SARVAM HEAD ABLATION] elapsed=23:26:40 cpu=41.0% | est ~71/80 heads (89%) | ~20min remaining | ETA 03:55 IST
+2026-04-12 03:35:15 [SARVAM HEAD ABLATION] elapsed=23:26:40 cpu=41.0% | est ~71/80 heads (89%) | ~20min remaining | ETA 03:55 IST
+2026-04-12 03:35:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 03:35:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 03:40:15 [SARVAM HEAD ABLATION] elapsed=23:31:40 cpu=39.6% | est ~73/80 heads (91%) | ~15min remaining | ETA 03:55 IST
+2026-04-12 03:40:15 [SARVAM HEAD ABLATION] elapsed=23:31:40 cpu=39.6% | est ~73/80 heads (91%) | ~15min remaining | ETA 03:55 IST
+2026-04-12 03:40:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 03:40:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 03:45:15 [SARVAM HEAD ABLATION] elapsed=23:36:40 cpu=22.5% | est ~75/80 heads (94%) | ~10min remaining | ETA 03:55 IST
+2026-04-12 03:45:15 [SARVAM HEAD ABLATION] elapsed=23:36:40 cpu=22.5% | est ~75/80 heads (94%) | ~10min remaining | ETA 03:55 IST
+2026-04-12 03:45:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 03:45:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 03:50:15 [SARVAM HEAD ABLATION] elapsed=23:41:40 cpu=44.3% | est ~77/80 heads (97%) | ~5min remaining | ETA 03:55 IST
+2026-04-12 03:50:15 [SARVAM HEAD ABLATION] elapsed=23:41:40 cpu=44.3% | est ~77/80 heads (97%) | ~5min remaining | ETA 03:55 IST
+2026-04-12 03:50:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 03:50:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 03:55:15 [SARVAM HEAD ABLATION] elapsed=23:46:40 cpu=44.4% | est ~79/80 heads (99%) | ~0min remaining | ETA 03:55 IST
+2026-04-12 03:55:15 [SARVAM HEAD ABLATION] elapsed=23:46:40 cpu=44.4% | est ~79/80 heads (99%) | ~0min remaining | ETA 03:55 IST
+2026-04-12 03:55:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 03:55:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 04:00:15 [SARVAM HEAD ABLATION] elapsed=23:51:40 cpu=41.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:00 IST
+2026-04-12 04:00:15 [SARVAM HEAD ABLATION] elapsed=23:51:40 cpu=41.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:00 IST
+2026-04-12 04:00:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 04:00:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 04:05:15 [SARVAM HEAD ABLATION] elapsed=23:56:40 cpu=44.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:05 IST
+2026-04-12 04:05:15 [SARVAM HEAD ABLATION] elapsed=23:56:40 cpu=44.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:05 IST
+2026-04-12 04:05:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 04:05:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 04:10:15 [SARVAM HEAD ABLATION] elapsed=01-00:01:40 cpu=36.0% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:10 IST
+2026-04-12 04:10:15 [SARVAM HEAD ABLATION] elapsed=01-00:01:40 cpu=36.0% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:10 IST
+2026-04-12 04:10:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 04:10:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 04:15:15 [SARVAM HEAD ABLATION] elapsed=01-00:06:40 cpu=43.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:15 IST
+2026-04-12 04:15:15 [SARVAM HEAD ABLATION] elapsed=01-00:06:40 cpu=43.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:15 IST
+2026-04-12 04:15:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 04:15:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 04:20:15 [SARVAM HEAD ABLATION] elapsed=01-00:11:40 cpu=37.4% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:20 IST
+2026-04-12 04:20:15 [SARVAM HEAD ABLATION] elapsed=01-00:11:40 cpu=37.4% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:20 IST
+2026-04-12 04:20:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 04:20:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 04:25:15 [SARVAM HEAD ABLATION] elapsed=01-00:16:40 cpu=41.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:25 IST
+2026-04-12 04:25:15 [SARVAM HEAD ABLATION] elapsed=01-00:16:40 cpu=41.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:25 IST
+2026-04-12 04:25:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 04:25:15 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 04:30:16 [SARVAM HEAD ABLATION] elapsed=01-00:21:41 cpu=43.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:30 IST
+2026-04-12 04:30:16 [SARVAM HEAD ABLATION] elapsed=01-00:21:41 cpu=43.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:30 IST
+2026-04-12 04:30:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 04:30:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 04:35:16 [SARVAM HEAD ABLATION] elapsed=01-00:26:41 cpu=37.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:35 IST
+2026-04-12 04:35:16 [SARVAM HEAD ABLATION] elapsed=01-00:26:41 cpu=37.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:35 IST
+2026-04-12 04:35:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 04:35:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 04:40:16 [SARVAM HEAD ABLATION] elapsed=01-00:31:41 cpu=41.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:40 IST
+2026-04-12 04:40:16 [SARVAM HEAD ABLATION] elapsed=01-00:31:41 cpu=41.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:40 IST
+2026-04-12 04:40:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 04:40:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 04:45:16 [SARVAM HEAD ABLATION] elapsed=01-00:36:41 cpu=41.4% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:45 IST
+2026-04-12 04:45:16 [SARVAM HEAD ABLATION] elapsed=01-00:36:41 cpu=41.4% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:45 IST
+2026-04-12 04:45:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 04:45:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 04:50:16 [SARVAM HEAD ABLATION] elapsed=01-00:41:41 cpu=44.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:50 IST
+2026-04-12 04:50:16 [SARVAM HEAD ABLATION] elapsed=01-00:41:41 cpu=44.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:50 IST
+2026-04-12 04:50:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 04:50:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 04:55:16 [SARVAM HEAD ABLATION] elapsed=01-00:46:41 cpu=25.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:55 IST
+2026-04-12 04:55:16 [SARVAM HEAD ABLATION] elapsed=01-00:46:41 cpu=25.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 04:55 IST
+2026-04-12 04:55:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 04:55:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 05:00:16 [SARVAM HEAD ABLATION] elapsed=01-00:51:41 cpu=44.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:00 IST
+2026-04-12 05:00:16 [SARVAM HEAD ABLATION] elapsed=01-00:51:41 cpu=44.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:00 IST
+2026-04-12 05:00:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 05:00:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 05:05:16 [SARVAM HEAD ABLATION] elapsed=01-00:56:41 cpu=31.4% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:05 IST
+2026-04-12 05:05:16 [SARVAM HEAD ABLATION] elapsed=01-00:56:41 cpu=31.4% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:05 IST
+2026-04-12 05:05:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 05:05:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 05:10:16 [SARVAM HEAD ABLATION] elapsed=01-01:01:41 cpu=31.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:10 IST
+2026-04-12 05:10:16 [SARVAM HEAD ABLATION] elapsed=01-01:01:41 cpu=31.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:10 IST
+2026-04-12 05:10:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 05:10:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 05:15:16 [SARVAM HEAD ABLATION] elapsed=01-01:06:41 cpu=43.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:15 IST
+2026-04-12 05:15:16 [SARVAM HEAD ABLATION] elapsed=01-01:06:41 cpu=43.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:15 IST
+2026-04-12 05:15:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 05:15:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 05:20:16 [SARVAM HEAD ABLATION] elapsed=01-01:11:41 cpu=44.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:20 IST
+2026-04-12 05:20:16 [SARVAM HEAD ABLATION] elapsed=01-01:11:41 cpu=44.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:20 IST
+2026-04-12 05:20:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 05:20:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 05:25:16 [SARVAM HEAD ABLATION] elapsed=01-01:16:41 cpu=44.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:25 IST
+2026-04-12 05:25:16 [SARVAM HEAD ABLATION] elapsed=01-01:16:41 cpu=44.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:25 IST
+2026-04-12 05:25:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 05:25:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 05:30:16 [SARVAM HEAD ABLATION] elapsed=01-01:21:41 cpu=44.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:30 IST
+2026-04-12 05:30:16 [SARVAM HEAD ABLATION] elapsed=01-01:21:41 cpu=44.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:30 IST
+2026-04-12 05:30:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 05:30:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 05:35:16 [SARVAM HEAD ABLATION] elapsed=01-01:26:41 cpu=26.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:35 IST
+2026-04-12 05:35:16 [SARVAM HEAD ABLATION] elapsed=01-01:26:41 cpu=26.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:35 IST
+2026-04-12 05:35:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 05:35:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 05:40:16 [SARVAM HEAD ABLATION] elapsed=01-01:31:41 cpu=30.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:40 IST
+2026-04-12 05:40:16 [SARVAM HEAD ABLATION] elapsed=01-01:31:41 cpu=30.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:40 IST
+2026-04-12 05:40:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 05:40:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 05:45:16 [SARVAM HEAD ABLATION] elapsed=01-01:36:41 cpu=44.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:45 IST
+2026-04-12 05:45:16 [SARVAM HEAD ABLATION] elapsed=01-01:36:41 cpu=44.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:45 IST
+2026-04-12 05:45:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 05:45:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 05:50:16 [SARVAM HEAD ABLATION] elapsed=01-01:41:41 cpu=27.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:50 IST
+2026-04-12 05:50:16 [SARVAM HEAD ABLATION] elapsed=01-01:41:41 cpu=27.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:50 IST
+2026-04-12 05:50:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 05:50:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 05:55:16 [SARVAM HEAD ABLATION] elapsed=01-01:46:41 cpu=43.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:55 IST
+2026-04-12 05:55:16 [SARVAM HEAD ABLATION] elapsed=01-01:46:41 cpu=43.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 05:55 IST
+2026-04-12 05:55:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 05:55:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 06:00:16 [SARVAM HEAD ABLATION] elapsed=01-01:51:41 cpu=29.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:00 IST
+2026-04-12 06:00:16 [SARVAM HEAD ABLATION] elapsed=01-01:51:41 cpu=29.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:00 IST
+2026-04-12 06:00:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 06:00:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 06:05:16 [SARVAM HEAD ABLATION] elapsed=01-01:56:41 cpu=44.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:05 IST
+2026-04-12 06:05:16 [SARVAM HEAD ABLATION] elapsed=01-01:56:41 cpu=44.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:05 IST
+2026-04-12 06:05:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 06:05:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 06:10:16 [SARVAM HEAD ABLATION] elapsed=01-02:01:41 cpu=33.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:10 IST
+2026-04-12 06:10:16 [SARVAM HEAD ABLATION] elapsed=01-02:01:41 cpu=33.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:10 IST
+2026-04-12 06:10:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 06:10:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 06:15:16 [SARVAM HEAD ABLATION] elapsed=01-02:06:41 cpu=43.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:15 IST
+2026-04-12 06:15:16 [SARVAM HEAD ABLATION] elapsed=01-02:06:41 cpu=43.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:15 IST
+2026-04-12 06:15:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 06:15:16 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 06:20:17 [SARVAM HEAD ABLATION] elapsed=01-02:11:42 cpu=42.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:20 IST
+2026-04-12 06:20:17 [SARVAM HEAD ABLATION] elapsed=01-02:11:42 cpu=42.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:20 IST
+2026-04-12 06:20:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 06:20:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 06:25:17 [SARVAM HEAD ABLATION] elapsed=01-02:16:42 cpu=39.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:25 IST
+2026-04-12 06:25:17 [SARVAM HEAD ABLATION] elapsed=01-02:16:42 cpu=39.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:25 IST
+2026-04-12 06:25:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 06:25:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 06:30:17 [SARVAM HEAD ABLATION] elapsed=01-02:21:42 cpu=43.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:30 IST
+2026-04-12 06:30:17 [SARVAM HEAD ABLATION] elapsed=01-02:21:42 cpu=43.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:30 IST
+2026-04-12 06:30:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 06:30:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 06:35:17 [SARVAM HEAD ABLATION] elapsed=01-02:26:42 cpu=40.1% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:35 IST
+2026-04-12 06:35:17 [SARVAM HEAD ABLATION] elapsed=01-02:26:42 cpu=40.1% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:35 IST
+2026-04-12 06:35:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 06:35:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 06:40:17 [SARVAM HEAD ABLATION] elapsed=01-02:31:42 cpu=45.1% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:40 IST
+2026-04-12 06:40:17 [SARVAM HEAD ABLATION] elapsed=01-02:31:42 cpu=45.1% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:40 IST
+2026-04-12 06:40:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 06:40:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 06:45:17 [SARVAM HEAD ABLATION] elapsed=01-02:36:42 cpu=43.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:45 IST
+2026-04-12 06:45:17 [SARVAM HEAD ABLATION] elapsed=01-02:36:42 cpu=43.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:45 IST
+2026-04-12 06:45:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 06:45:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 06:50:17 [SARVAM HEAD ABLATION] elapsed=01-02:41:42 cpu=33.4% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:50 IST
+2026-04-12 06:50:17 [SARVAM HEAD ABLATION] elapsed=01-02:41:42 cpu=33.4% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:50 IST
+2026-04-12 06:50:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 06:50:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 06:55:17 [SARVAM HEAD ABLATION] elapsed=01-02:46:42 cpu=42.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:55 IST
+2026-04-12 06:55:17 [SARVAM HEAD ABLATION] elapsed=01-02:46:42 cpu=42.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 06:55 IST
+2026-04-12 06:55:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 06:55:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 07:00:17 [SARVAM HEAD ABLATION] elapsed=01-02:51:42 cpu=24.1% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:00 IST
+2026-04-12 07:00:17 [SARVAM HEAD ABLATION] elapsed=01-02:51:42 cpu=24.1% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:00 IST
+2026-04-12 07:00:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 07:00:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 07:05:17 [SARVAM HEAD ABLATION] elapsed=01-02:56:42 cpu=39.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:05 IST
+2026-04-12 07:05:17 [SARVAM HEAD ABLATION] elapsed=01-02:56:42 cpu=39.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:05 IST
+2026-04-12 07:05:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 07:05:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 07:10:17 [SARVAM HEAD ABLATION] elapsed=01-03:01:42 cpu=43.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:10 IST
+2026-04-12 07:10:17 [SARVAM HEAD ABLATION] elapsed=01-03:01:42 cpu=43.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:10 IST
+2026-04-12 07:10:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 07:10:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 07:15:17 [SARVAM HEAD ABLATION] elapsed=01-03:06:42 cpu=40.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:15 IST
+2026-04-12 07:15:17 [SARVAM HEAD ABLATION] elapsed=01-03:06:42 cpu=40.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:15 IST
+2026-04-12 07:15:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 07:15:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 07:20:17 [SARVAM HEAD ABLATION] elapsed=01-03:11:42 cpu=44.0% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:20 IST
+2026-04-12 07:20:17 [SARVAM HEAD ABLATION] elapsed=01-03:11:42 cpu=44.0% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:20 IST
+2026-04-12 07:20:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 07:20:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 07:25:17 [SARVAM HEAD ABLATION] elapsed=01-03:16:42 cpu=43.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:25 IST
+2026-04-12 07:25:17 [SARVAM HEAD ABLATION] elapsed=01-03:16:42 cpu=43.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:25 IST
+2026-04-12 07:25:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 07:25:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 07:30:17 [SARVAM HEAD ABLATION] elapsed=01-03:21:42 cpu=43.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:30 IST
+2026-04-12 07:30:17 [SARVAM HEAD ABLATION] elapsed=01-03:21:42 cpu=43.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:30 IST
+2026-04-12 07:30:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 07:30:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 07:35:17 [SARVAM HEAD ABLATION] elapsed=01-03:26:42 cpu=43.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:35 IST
+2026-04-12 07:35:17 [SARVAM HEAD ABLATION] elapsed=01-03:26:42 cpu=43.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:35 IST
+2026-04-12 07:35:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 07:35:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 07:40:17 [SARVAM HEAD ABLATION] elapsed=01-03:31:42 cpu=43.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:40 IST
+2026-04-12 07:40:17 [SARVAM HEAD ABLATION] elapsed=01-03:31:42 cpu=43.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:40 IST
+2026-04-12 07:40:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 07:40:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 07:45:17 [SARVAM HEAD ABLATION] elapsed=01-03:36:42 cpu=39.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:45 IST
+2026-04-12 07:45:17 [SARVAM HEAD ABLATION] elapsed=01-03:36:42 cpu=39.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:45 IST
+2026-04-12 07:45:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 07:45:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 07:50:17 [SARVAM HEAD ABLATION] elapsed=01-03:41:42 cpu=44.4% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:50 IST
+2026-04-12 07:50:17 [SARVAM HEAD ABLATION] elapsed=01-03:41:42 cpu=44.4% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:50 IST
+2026-04-12 07:50:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 07:50:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 07:55:17 [SARVAM HEAD ABLATION] elapsed=01-03:46:42 cpu=44.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:55 IST
+2026-04-12 07:55:17 [SARVAM HEAD ABLATION] elapsed=01-03:46:42 cpu=44.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 07:55 IST
+2026-04-12 07:55:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 07:55:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 08:00:17 [SARVAM HEAD ABLATION] elapsed=01-03:51:42 cpu=43.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:00 IST
+2026-04-12 08:00:17 [SARVAM HEAD ABLATION] elapsed=01-03:51:42 cpu=43.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:00 IST
+2026-04-12 08:00:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 08:00:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 08:05:17 [SARVAM HEAD ABLATION] elapsed=01-03:56:42 cpu=45.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:05 IST
+2026-04-12 08:05:17 [SARVAM HEAD ABLATION] elapsed=01-03:56:42 cpu=45.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:05 IST
+2026-04-12 08:05:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 08:05:17 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 08:10:18 [SARVAM HEAD ABLATION] elapsed=01-04:01:43 cpu=44.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:10 IST
+2026-04-12 08:10:18 [SARVAM HEAD ABLATION] elapsed=01-04:01:43 cpu=44.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:10 IST
+2026-04-12 08:10:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 08:10:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 08:15:18 [SARVAM HEAD ABLATION] elapsed=01-04:06:43 cpu=44.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:15 IST
+2026-04-12 08:15:18 [SARVAM HEAD ABLATION] elapsed=01-04:06:43 cpu=44.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:15 IST
+2026-04-12 08:15:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 08:15:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 08:20:18 [SARVAM HEAD ABLATION] elapsed=01-04:11:43 cpu=45.1% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:20 IST
+2026-04-12 08:20:18 [SARVAM HEAD ABLATION] elapsed=01-04:11:43 cpu=45.1% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:20 IST
+2026-04-12 08:20:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 08:20:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 08:25:18 [SARVAM HEAD ABLATION] elapsed=01-04:16:43 cpu=41.1% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:25 IST
+2026-04-12 08:25:18 [SARVAM HEAD ABLATION] elapsed=01-04:16:43 cpu=41.1% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:25 IST
+2026-04-12 08:25:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 08:25:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 08:30:18 [SARVAM HEAD ABLATION] elapsed=01-04:21:43 cpu=42.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:30 IST
+2026-04-12 08:30:18 [SARVAM HEAD ABLATION] elapsed=01-04:21:43 cpu=42.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:30 IST
+2026-04-12 08:30:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 08:30:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 08:35:18 [SARVAM HEAD ABLATION] elapsed=01-04:26:43 cpu=44.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:35 IST
+2026-04-12 08:35:18 [SARVAM HEAD ABLATION] elapsed=01-04:26:43 cpu=44.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:35 IST
+2026-04-12 08:35:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 08:35:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 08:40:18 [SARVAM HEAD ABLATION] elapsed=01-04:31:43 cpu=41.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:40 IST
+2026-04-12 08:40:18 [SARVAM HEAD ABLATION] elapsed=01-04:31:43 cpu=41.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:40 IST
+2026-04-12 08:40:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 08:40:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 08:45:18 [SARVAM HEAD ABLATION] elapsed=01-04:36:43 cpu=33.0% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:45 IST
+2026-04-12 08:45:18 [SARVAM HEAD ABLATION] elapsed=01-04:36:43 cpu=33.0% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:45 IST
+2026-04-12 08:45:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 08:45:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 08:50:18 [SARVAM HEAD ABLATION] elapsed=01-04:41:43 cpu=44.1% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:50 IST
+2026-04-12 08:50:18 [SARVAM HEAD ABLATION] elapsed=01-04:41:43 cpu=44.1% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:50 IST
+2026-04-12 08:50:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 08:50:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 08:55:18 [SARVAM HEAD ABLATION] elapsed=01-04:46:43 cpu=44.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:55 IST
+2026-04-12 08:55:18 [SARVAM HEAD ABLATION] elapsed=01-04:46:43 cpu=44.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 08:55 IST
+2026-04-12 08:55:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 08:55:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 09:00:18 [SARVAM HEAD ABLATION] elapsed=01-04:51:43 cpu=29.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:00 IST
+2026-04-12 09:00:18 [SARVAM HEAD ABLATION] elapsed=01-04:51:43 cpu=29.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:00 IST
+2026-04-12 09:00:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 09:00:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 09:05:18 [SARVAM HEAD ABLATION] elapsed=01-04:56:43 cpu=43.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:05 IST
+2026-04-12 09:05:18 [SARVAM HEAD ABLATION] elapsed=01-04:56:43 cpu=43.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:05 IST
+2026-04-12 09:05:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 09:05:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 09:10:18 [SARVAM HEAD ABLATION] elapsed=01-05:01:43 cpu=41.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:10 IST
+2026-04-12 09:10:18 [SARVAM HEAD ABLATION] elapsed=01-05:01:43 cpu=41.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:10 IST
+2026-04-12 09:10:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 09:10:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 09:15:18 [SARVAM HEAD ABLATION] elapsed=01-05:06:43 cpu=36.4% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:15 IST
+2026-04-12 09:15:18 [SARVAM HEAD ABLATION] elapsed=01-05:06:43 cpu=36.4% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:15 IST
+2026-04-12 09:15:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 09:15:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 09:20:18 [SARVAM HEAD ABLATION] elapsed=01-05:11:43 cpu=43.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:20 IST
+2026-04-12 09:20:18 [SARVAM HEAD ABLATION] elapsed=01-05:11:43 cpu=43.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:20 IST
+2026-04-12 09:20:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 09:20:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 09:25:18 [SARVAM HEAD ABLATION] elapsed=01-05:16:43 cpu=40.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:25 IST
+2026-04-12 09:25:18 [SARVAM HEAD ABLATION] elapsed=01-05:16:43 cpu=40.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:25 IST
+2026-04-12 09:25:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 09:25:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 09:30:18 [SARVAM HEAD ABLATION] elapsed=01-05:21:43 cpu=44.0% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:30 IST
+2026-04-12 09:30:18 [SARVAM HEAD ABLATION] elapsed=01-05:21:43 cpu=44.0% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:30 IST
+2026-04-12 09:30:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 09:30:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 09:35:18 [SARVAM HEAD ABLATION] elapsed=01-05:26:43 cpu=42.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:35 IST
+2026-04-12 09:35:18 [SARVAM HEAD ABLATION] elapsed=01-05:26:43 cpu=42.8% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:35 IST
+2026-04-12 09:35:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 09:35:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 09:40:18 [SARVAM HEAD ABLATION] elapsed=01-05:31:43 cpu=41.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:40 IST
+2026-04-12 09:40:18 [SARVAM HEAD ABLATION] elapsed=01-05:31:43 cpu=41.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:40 IST
+2026-04-12 09:40:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 09:40:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 09:45:18 [SARVAM HEAD ABLATION] elapsed=01-05:36:43 cpu=44.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:45 IST
+2026-04-12 09:45:18 [SARVAM HEAD ABLATION] elapsed=01-05:36:43 cpu=44.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:45 IST
+2026-04-12 09:45:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 09:45:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 09:50:18 [SARVAM HEAD ABLATION] elapsed=01-05:41:43 cpu=43.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:50 IST
+2026-04-12 09:50:18 [SARVAM HEAD ABLATION] elapsed=01-05:41:43 cpu=43.5% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:50 IST
+2026-04-12 09:50:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 09:50:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 09:55:18 [SARVAM HEAD ABLATION] elapsed=01-05:46:43 cpu=40.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:55 IST
+2026-04-12 09:55:18 [SARVAM HEAD ABLATION] elapsed=01-05:46:43 cpu=40.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 09:55 IST
+2026-04-12 09:55:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 09:55:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 10:00:18 [SARVAM HEAD ABLATION] elapsed=01-05:51:43 cpu=39.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:00 IST
+2026-04-12 10:00:18 [SARVAM HEAD ABLATION] elapsed=01-05:51:43 cpu=39.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:00 IST
+2026-04-12 10:00:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 10:00:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 10:05:18 [SARVAM HEAD ABLATION] elapsed=01-05:56:44 cpu=24.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:05 IST
+2026-04-12 10:05:18 [SARVAM HEAD ABLATION] elapsed=01-05:56:44 cpu=24.6% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:05 IST
+2026-04-12 10:05:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 10:05:18 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 10:10:19 [SARVAM HEAD ABLATION] elapsed=01-06:01:44 cpu=43.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:10 IST
+2026-04-12 10:10:19 [SARVAM HEAD ABLATION] elapsed=01-06:01:44 cpu=43.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:10 IST
+2026-04-12 10:10:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 10:10:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 10:15:19 [SARVAM HEAD ABLATION] elapsed=01-06:06:44 cpu=39.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:15 IST
+2026-04-12 10:15:19 [SARVAM HEAD ABLATION] elapsed=01-06:06:44 cpu=39.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:15 IST
+2026-04-12 10:15:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 10:15:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 10:20:19 [SARVAM HEAD ABLATION] elapsed=01-06:11:44 cpu=23.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:20 IST
+2026-04-12 10:20:19 [SARVAM HEAD ABLATION] elapsed=01-06:11:44 cpu=23.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:20 IST
+2026-04-12 10:20:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 10:20:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 10:25:19 [SARVAM HEAD ABLATION] elapsed=01-06:16:44 cpu=43.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:25 IST
+2026-04-12 10:25:19 [SARVAM HEAD ABLATION] elapsed=01-06:16:44 cpu=43.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:25 IST
+2026-04-12 10:25:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 10:25:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 10:30:19 [SARVAM HEAD ABLATION] elapsed=01-06:21:44 cpu=44.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:30 IST
+2026-04-12 10:30:19 [SARVAM HEAD ABLATION] elapsed=01-06:21:44 cpu=44.3% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:30 IST
+2026-04-12 10:30:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 10:30:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 10:35:19 [SARVAM HEAD ABLATION] elapsed=01-06:26:44 cpu=44.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:35 IST
+2026-04-12 10:35:19 [SARVAM HEAD ABLATION] elapsed=01-06:26:44 cpu=44.7% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:35 IST
+2026-04-12 10:35:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 10:35:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 10:40:19 [SARVAM HEAD ABLATION] elapsed=01-06:31:44 cpu=37.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:40 IST
+2026-04-12 10:40:19 [SARVAM HEAD ABLATION] elapsed=01-06:31:44 cpu=37.9% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:40 IST
+2026-04-12 10:40:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 10:40:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 10:45:19 [SARVAM HEAD ABLATION] elapsed=01-06:36:44 cpu=43.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:45 IST
+2026-04-12 10:45:19 [SARVAM HEAD ABLATION] elapsed=01-06:36:44 cpu=43.2% | est ~80/80 heads (99%) | ~0min remaining | ETA 10:45 IST
+2026-04-12 10:45:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 10:45:19 [ABLATION FILES] head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+---
+2026-04-12 10:50:19 [SARVAM PROCESS DONE]
+2026-04-12 10:50:19 [SARVAM PROCESS DONE]
+2026-04-12 10:50:19 [ABLATION FILES] head_ablation_sarvam.json head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 10:50:19 [ABLATION FILES] head_ablation_sarvam.json head_ablation_t5.json layer_ablation_sarvam.json layer_ablation_t5.json 
+2026-04-12 10:50:19 [PLOTS] 14 files: attention_entropy_heatmap_sarvam.png attention_entropy_heatmap_t5.png attention_grid_sarvam_s18.png attention_grid_sarvam_s26.png attention_grid_sarvam_s67.png attention_grid_t5_s14.png attention_grid_t5_s62.png attention_grid_t5_s76.png lbs_curves_all.png lss_curves_all.png lss_religion_heatmap.png probing_curves_all.png rtas_bars_sarvam.png rtas_bars_t5.png 
+2026-04-12 10:50:19 [PLOTS] 14 files: attention_entropy_heatmap_sarvam.png attention_entropy_heatmap_t5.png attention_grid_sarvam_s18.png attention_grid_sarvam_s26.png attention_grid_sarvam_s67.png attention_grid_t5_s14.png attention_grid_t5_s62.png attention_grid_t5_s76.png lbs_curves_all.png lss_curves_all.png lss_religion_heatmap.png probing_curves_all.png rtas_bars_sarvam.png rtas_bars_t5.png 
+2026-04-12 10:50:19 [PIPELINE COMPLETE] All done!
+2026-04-12 10:50:19 [PIPELINE COMPLETE] All done!

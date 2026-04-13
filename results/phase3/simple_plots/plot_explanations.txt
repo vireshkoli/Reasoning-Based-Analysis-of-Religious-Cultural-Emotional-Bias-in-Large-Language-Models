@@ -1,0 +1,396 @@
+================================================================
+  PLAIN-LANGUAGE EXPLANATION OF ALL 5 SUMMARY PLOTS
+  Project: Religion-Conditioned Emotional Bias in AI Models
+  Models: FLAN-T5-Large (Google) | Sarvam-2B (Sarvam AI)
+================================================================
+
+These 5 plots answer three core questions:
+  (1) Does religion context change the emotion prediction?
+  (2) Why does asking the model to explain its reasoning make
+      bias so much worse?
+  (3) Which specific part of the AI network is responsible?
+
+Each plot is designed to be self-contained. You do not need any
+machine learning knowledge to understand them — everything is
+explained in everyday language below.
+
+────────────────────────────────────────────────────────────────
+FIGURE 1 — fig1_religion_trigger.png
+"Does Mentioning a Religion Change the Emotion the AI Predicts?"
+────────────────────────────────────────────────────────────────
+
+WHAT THE PLOT SHOWS:
+  Two bar charts side by side — one for T5 (left) and one for
+  Sarvam (right). Each chart has four bars, one per religion:
+  Hindu, Muslim, Sikh, and Christian.
+
+  The HEIGHT of each bar = the percentage of the 100 test
+  situations where the model predicted a DIFFERENT emotion
+  just because of the religion label. The situations themselves
+  are identical — only the religion word changes.
+
+  Example: A bar at 30% for Christian means:
+    "In 30 out of 100 identical situations, T5 predicted a
+    different emotion when the situation said Christian
+    compared to when there was no religion label."
+    This is the bias — the same situation, different treatment.
+
+  The thick horizontal dotted line shows 20% — this is the
+  level you would expect from random chance alone (if the model
+  was guessing randomly among 5 emotions, it would "change"
+  20% of the time). Any bar above this line shows more bias
+  than random chance.
+
+HOW TO READ IT:
+  Taller bar = more bias for that religion group.
+  All bars should ideally be at 0% (religion should not matter).
+
+WHAT THE NUMBERS SHOW:
+
+  FLAN-T5-Large:
+    Hindu     → 26% of situations changed emotion
+    Muslim    → 21% of situations changed emotion
+    Sikh      → 21% of situations changed emotion
+    Christian → 30% of situations changed emotion  ← highest
+    OVERALL   → 85% of situations showed at least one religion
+                causing an emotion change
+
+  Sarvam-2B:
+    Hindu     →  5% of situations changed emotion
+    Muslim    → 14% of situations changed emotion
+    Sikh      →  7% of situations changed emotion
+    Christian →  6% of situations changed emotion
+    OVERALL   → 90% of situations showed at least one religion
+                causing an emotion change
+
+WHY THE PER-RELIGION AND OVERALL NUMBERS DIFFER FOR SARVAM:
+  Each religion individually only changed a small fraction of
+  situations (5-14%). But across ALL four religions, almost
+  EVERY situation showed at least one religion causing a different
+  emotion. Think of it like rolling dice: individually each face
+  has a small chance of coming up, but roll four dice and you'll
+  almost always see at least one of them be different.
+
+KEY INSIGHT:
+  Both models are highly biased. An AI that was truly fair would
+  show bars at or near 0%. T5's bars are above 20% for all
+  religions — consistently worse than random chance. The Christian
+  label causes the most emotion changes in T5 (30%), while the
+  Muslim label causes the most in Sarvam (14%).
+
+────────────────────────────────────────────────────────────────
+FIGURE 2 — fig2_direct_vs_reasoning.png
+"Why Does Asking the AI to Explain Itself Make Bias Worse?"
+────────────────────────────────────────────────────────────────
+
+WHAT THE PLOT SHOWS:
+  Two pairs of bars — one pair per model. Each pair shows:
+    Blue bar  = "Direct mode" bias rate
+    Red bar   = "Reasoning mode" bias rate
+  A double-headed arrow between the two bars shows the gap.
+
+  BIAS RATE = the percentage of situations where at least one
+  religion caused a different emotion prediction.
+  A higher bias rate = more bias overall.
+
+WHAT ARE THE TWO MODES?
+
+  Direct mode (blue bar): We ask the model one simple question:
+    "What emotion does this person feel?" — Joy, Sadness, Anger,
+    Fear, or Neutral. The model answers immediately.
+
+  Reasoning mode (red bar): We first ask the model to write out
+    an explanation — "Explain why this person might feel a
+    certain way in this situation." Then we ask it to classify
+    the emotion based on its OWN explanation.
+    This method is known as "chain-of-thought prompting" in AI
+    research and is generally thought to improve accuracy.
+    But here it amplifies bias instead.
+
+WHAT THE NUMBERS SHOW:
+
+  FLAN-T5-Large:
+    Direct mode bias rate    : 42%
+    Reasoning mode bias rate : 83%
+    Gap                      : +41 percentage points
+    → Bias almost DOUBLED when reasoning was added.
+
+  Sarvam-2B:
+    Direct mode bias rate    :  16%
+    Reasoning mode bias rate :  76%
+    Gap                      : +60 percentage points
+    → Bias increased almost 5× when reasoning was added.
+
+WHY DOES REASONING MAKE IT WORSE?
+  When the model writes an explanation, it uses language like:
+    "In a Muslim family, the person might feel..."
+    "A Hindu person in this situation would typically..."
+  The model has absorbed stereotypes from the internet text it
+  was trained on, and writing them out in the explanation locks
+  in the biased reasoning. The explanation then DRIVES the
+  emotion answer.
+
+  In direct mode, the model goes straight to the answer without
+  writing stereotypes explicitly, so there is less opportunity
+  for the stereotypes to surface.
+
+  Sarvam shows a bigger gap (+60 points) than T5 (+41 points),
+  meaning Sarvam's explanations are more prone to incorporating
+  religious stereotypes than T5's.
+
+KEY INSIGHT:
+  "Thinking out loud" in AI makes religion bias significantly
+  worse. A technique that is supposed to improve AI quality
+  (chain-of-thought reasoning) actually makes discrimination
+  worse in this context. This is an important and concerning
+  finding for AI safety.
+
+────────────────────────────────────────────────────────────────
+FIGURE 3 — fig3_layer_contribution.png
+"Which Internal Part of the AI Network Creates the Bias?"
+────────────────────────────────────────────────────────────────
+
+WHAT THE PLOT SHOWS:
+  Two vertical bar charts (one per model), each showing the
+  "contribution score" of every internal layer in the network.
+
+  A neural network like T5 or Sarvam is made of many layers
+  stacked on top of each other — like floors in a building.
+  Information flows from the bottom floor (layer 0) to the top
+  floor (last layer), getting processed at each floor.
+
+  We tested each layer by temporarily "turning it off" — making
+  it pass information through unchanged, as if that floor of the
+  building did nothing. Then we measured whether bias went up or
+  down.
+
+  CONTRIBUTION SCORE (the bar height):
+    Positive score (red bar) = turning this layer OFF reduced bias.
+      → This layer was CREATING bias. Higher bar = more responsible.
+    Negative score (blue bar) = turning this layer OFF made bias WORSE.
+      → This layer was FIGHTING bias. It was helping reduce it.
+    Bar near zero = this layer has no effect on bias.
+
+HOW TO READ IT:
+  - A tall red bar = "this layer is the main culprit"
+  - A tall blue bar = "this layer was actually a good guard against bias"
+  - Most bars near zero = most layers are not involved in bias
+
+WHAT THE NUMBERS SHOW:
+
+  FLAN-T5-Large (starting bias = 85%):
+    Decoder Layer 6  : +83% ← one bar towers over all others
+      → Turning off this ONE layer drops bias from 85% to 2%.
+        This layer alone is responsible for 83% of T5's bias.
+    Encoder Layer 18 : +12% → drops bias to 73%
+    Encoder Layer 6  : + 9% → drops bias to 76%
+    Decoder Layer 4  : −10% (bias-FIGHTING layer — removing it
+                              raises bias to 95%)
+    Encoder Layer 0  : − 7% (another bias-fighting layer)
+
+  Sarvam-2B (starting bias = 90%):
+    Decoder Layer 0  : +63% ← most responsible layer
+      → Turning this off drops bias from 90% to 27%.
+    Decoder Layer 12 : +37% → drops bias to 53%
+    Decoder Layer 1  : +18% → drops bias to 72%
+    Layers 14, 15, 17, 18, 19: −10% each (bias-FIGHTING layers —
+      removing any one of these causes bias to jump to 100%!)
+
+KEY INSIGHT:
+  T5's bias is like a single bad employee doing most of the
+  damage (Decoder Layer 6). Remove that one employee and almost
+  all bias disappears.
+
+  Sarvam's bias is like a committee of workers each contributing
+  a little (Layers 0, 1, 12, 16). No single removal fixes it.
+
+  Both models also have layers that are ACTIVELY fighting bias.
+  The AI is not purely biased — it has internal correction
+  mechanisms that are simply being overpowered by the bad layers.
+
+────────────────────────────────────────────────────────────────
+FIGURE 4 — fig4_head_contribution.png
+"Which Specific Worker Inside the Biased Layer Is Responsible?"
+────────────────────────────────────────────────────────────────
+
+WHAT THE PLOT SHOWS:
+  Two heatmaps (colored grids), one per model. Each row shows one
+  of the most biased layers found in Figure 3. Each column shows
+  one of the 16 "attention heads" within that layer.
+
+  What is an ATTENTION HEAD?
+  Each layer in a transformer network contains 16 "workers" called
+  attention heads. Each head independently reads the text and
+  decides what to focus on. Their outputs are combined to form the
+  layer's final result. Think of them as 16 committee members that
+  each read the same document and produce their own analysis, then
+  vote on the conclusion.
+
+  The color in each cell = what happens to bias when that one
+  worker is individually turned off (set to zero):
+    RED cell = turning off this head reduces bias (this head was causing it)
+    BLUE cell = turning off this head increases bias (this head was helping)
+    WHITE/PALE cell = this head has no effect on bias
+
+  The number inside each cell = the exact percentage change.
+
+HOW TO READ IT:
+  Look for the most red cells — those are the specific workers
+  most responsible for bias. If everything is white/pale, it means
+  no single worker is solely responsible (the whole layer cooperates).
+
+WHAT THE NUMBERS SHOW:
+
+  FLAN-T5-Large:
+    All cells are near 0% — no single head stands out.
+    → T5's bias in Decoder Layer 6 is a GROUP effort. All 16 heads
+      work together to create it. You cannot fix the problem by
+      removing just one head — the entire layer needs to be changed.
+    → The negative cells in Decoder Layer 4 heads confirm that
+      layer is collectively suppressing bias (all heads help fight it).
+
+  Sarvam-2B:
+    Decoder Layer 12, Head 1 : −15% (most red cell)
+      → Turning off this ONE worker alone reduces total bias from
+        90% to 75%. This is the most specific "bias culprit" we found.
+    Decoder Layer 0,  Heads 5, 10, 11 : −10% each
+    Decoder Layer 12, Heads 0, 5      : −10% each
+    Decoder Layer 16, Heads 0, 7, 12  : −10% each
+    → A handful of specific workers across three layers are identified.
+      Notably: turning off these heads eliminates bias in DIRECT MODE
+      completely, while reasoning-mode bias remains — confirming these
+      specific workers are responsible only for direct-mode bias.
+
+KEY INSIGHT:
+  The precision of the finding differs between the models:
+  T5  : "Decoder Layer 6 as a WHOLE causes the bias — a building-level
+         problem, not a single worker."
+  Sarvam: "Decoder Layer 12, Head 1 is the single most responsible
+           individual worker — a targeted fix might be possible."
+
+────────────────────────────────────────────────────────────────
+FIGURE 5 — fig5_probing_when_encoded.png
+"At Which Point Does the AI First Become Aware of the Religion?"
+────────────────────────────────────────────────────────────────
+
+WHAT THE PLOT SHOWS:
+  Line charts with lines going from left (first layer) to right
+  (last layer), showing the accuracy of a simple detector.
+
+  WHAT IS THE DETECTOR?
+  We trained a very simple linear model (a logistic regression)
+  on the internal signals from each layer of the AI, asking it
+  two questions:
+    (A) Can you predict the EMOTION (Joy/Sadness/Anger/Fear/Neutral)
+        that the model will output, just from the internal signal
+        at this layer?
+    (B) Can you predict the RELIGION (None/Hindu/Muslim/Sikh/
+        Christian) that was in the prompt, just from the internal
+        signal at this layer?
+
+  High accuracy = the information IS present in the internal
+    signal at that layer (the detector can find it)
+  Low accuracy ≈ 20% = the information is NOT present
+    (20% is random chance for 5 categories)
+
+  The dotted line at 20% is the random chance baseline.
+  Any line clearly above 20% means the AI model "knows" that
+  information at that layer.
+
+HOW TO READ IT:
+  - A JUMP in a line = that layer is where new information
+    suddenly becomes available in the model's internal signals.
+  - A FLAT line above 20% = the information was already there
+    and stays throughout (no single "entry point").
+  - A line flat at 20% = the information is absent at those layers.
+
+WHAT THE NUMBERS SHOW:
+
+  FLAN-T5-Large Encoder (processes the written prompt):
+    Religion detector accuracy: 61% from layer 0 → stays 60-63%
+      → The AI knows the religion from the VERY FIRST LAYER of
+        processing the input. It never forgets it.
+    Emotion detector accuracy: 52% throughout
+      → Weak emotion signal throughout the encoder — the input
+        text contains hints of emotion but the final answer is
+        not decided yet.
+
+  FLAN-T5-Large Decoder (generates the output word):
+    Religion detector at layer 0: 18% ← below random chance!
+      → At the very start of the decoder, there is ZERO religion
+        information (even less than random guessing).
+    Religion detector at layer 1: 60% ← SUDDEN JUMP
+      → In one step, the decoder goes from knowing nothing to
+        knowing everything about the religion. This jump happens
+        because layer 1 is where the decoder reads from the encoder.
+    Emotion detector: same pattern — 26% at layer 0, jumps to 47% at layer 1.
+
+  Sarvam-2B Decoder (does everything in one pass):
+    Religion detector: 66% at layer 0 → stays 66-69% throughout
+    Emotion detector:  70% at layer 0 → stays 70-73% throughout
+    → Sarvam has even HIGHER detection accuracy than T5, from the
+      very first layer. No jump, no entry point — religion and
+      emotion information are present from the absolute beginning
+      and maintained across all 28 layers.
+
+KEY INSIGHT:
+  Religion information is NOT gradually introduced as the model
+  processes — it is there from the VERY FIRST LAYER and stays
+  forever. This means:
+
+  1. Bias is not a "late stage" problem — it is embedded in the
+     model's understanding of the text from the start.
+  2. You cannot fix bias by only modifying the last few layers.
+     The religion signal flows through the ENTIRE network.
+  3. The consistently high religion detection accuracy (60-69%
+     across ALL layers, far above 20% random chance) confirms
+     that no layer "forgets" the religion — it is always available
+     to be acted upon by whatever layer creates the bias.
+
+  Think of it like a person who reads "In a Hindu family..." and
+  never stops being aware of that fact throughout their thinking
+  process. The religion tag follows the model's "train of thought"
+  from beginning to end.
+
+================================================================
+HOW ALL 5 PLOTS TELL ONE COMPLETE STORY
+================================================================
+
+  Fig 1 answers WHAT:
+    Religion context changes the predicted emotion in 85-90% of
+    situations. Christian context is most potent for T5, Muslim
+    for Sarvam.
+
+  Fig 2 answers WHY IT IS WORSE WITH REASONING:
+    Asking the model to explain its thinking before answering
+    forces it to write out religious stereotypes explicitly,
+    which then determine the emotion answer. This increases bias
+    by +41 percentage points for T5 and +60 points for Sarvam.
+
+  Fig 3 answers WHERE (which layer):
+    T5: Decoder Layer 6 alone is responsible for 83% of bias.
+    Sarvam: Decoder Layers 0 and 12 are the primary contributors.
+    Both models also have "good" layers that fight bias.
+
+  Fig 4 answers WHICH (which specific worker in the layer):
+    T5: No single worker — the whole of Decoder Layer 6 cooperates.
+    Sarvam: Decoder Layer 12, Head 1 is the most identifiable
+    single responsible worker (accounts for 15% of total bias).
+
+  Fig 5 answers WHEN (how early does the model notice religion):
+    Religion is noticed at the VERY FIRST LAYER in both models
+    and is never forgotten. Bias is not introduced late —
+    it is woven in from the moment the model reads the input text.
+
+================================================================
+STUDY SETUP (for reference)
+================================================================
+  - 100 different situations across 4 topics: family, workplace,
+    legal, and general everyday life
+  - 5 religion conditions: no religion, Hindu, Muslim, Sikh, Christian
+  - 2 ways of asking: direct question and reasoning-first question
+  - 5 possible emotions: Joy, Sadness, Anger, Fear, Neutral
+  - Total predictions made: 1000 per model (100 × 5 × 2)
+  - Each ablation experiment: re-ran all 1000 predictions
+    with one layer/head turned off
+================================================================

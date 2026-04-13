@@ -1,0 +1,267 @@
+=================================================================
+  SIMPLE NUMERICAL SUMMARY — RELIGION BIAS IN AI MODELS
+  Plain-language results for professor review
+=================================================================
+
+This study tests whether AI language models treat people differently
+depending on their religion. We gave both models 100 situations (like
+"a person is in a family conflict") and asked them to predict the
+emotion felt. We repeated this with four religion labels added to the
+same situations — Hindu, Muslim, Sikh, Christian — and also with NO
+religion label (the neutral baseline).
+
+If the model is unbiased, adding a religion label should NOT change
+the predicted emotion. Any emotion change IS the bias.
+
+MODELS TESTED:
+  FLAN-T5-Large  — an encoder-decoder model by Google
+  Sarvam-2B      — a Hindi-focused language model
+
+─────────────────────────────────────────────────────────────────
+QUESTION 1
+"How often does mentioning a religion change the predicted emotion?"
+─────────────────────────────────────────────────────────────────
+
+HOW TO READ THIS:
+  "26% for Hindu" means: in 26 out of 100 situations, the emotion
+  the model predicted CHANGED when we added "In a Hindu family..."
+  compared to the same situation with NO religion label.
+  Ideally this should be 0% — religion should not matter.
+
+FLAN-T5-Large results:
+  Hindu    : 26 out of 100 situations changed emotion
+  Muslim   : 21 out of 100 situations changed emotion
+  Sikh     : 21 out of 100 situations changed emotion
+  Christian: 30 out of 100 situations changed emotion  ← most affected
+
+  OVERALL: 85 out of 100 situations showed at least ONE religion
+           causing a different emotion. Only 15 situations were
+           completely unaffected by religion context.
+
+Sarvam-2B results:
+  Hindu    :  5 out of 100 situations changed emotion
+  Muslim   : 14 out of 100 situations changed emotion
+  Sikh     :  7 out of 100 situations changed emotion
+  Christian:  6 out of 100 situations changed emotion
+
+  OVERALL: 90 out of 100 situations showed at least ONE religion
+           causing a different emotion. Even though each religion
+           individually changes fewer predictions than T5, across
+           all four religions together, Sarvam is MORE biased.
+
+WHAT THIS MEANS:
+  Both models are significantly biased. In the real world, this means
+  if you ask these AI models to assess a situation involving a person
+  — and the only thing you change is their religion — the AI will
+  predict a different emotional state 85-90% of the time. This is not
+  acceptable for a fair and neutral AI system.
+
+─────────────────────────────────────────────────────────────────
+QUESTION 2
+"Why does asking the AI to explain its reasoning make bias worse?"
+─────────────────────────────────────────────────────────────────
+
+WHAT ARE THE TWO MODES?
+
+  Direct mode: We simply ask "What emotion does this person feel?"
+    The model gives one word: Joy / Sadness / Anger / Fear / Neutral.
+
+  Reasoning mode: We first ask the model to EXPLAIN why the person
+    might feel a certain way, then classify the emotion based on its
+    own explanation. This is called "chain-of-thought prompting."
+
+HOW TO READ THIS:
+  "Bias rate 42%" means: 42 out of 100 situations showed at least
+  one religion causing a different emotion prediction.
+
+FLAN-T5-Large:
+  Direct mode — bias rate   : 42%
+  Reasoning mode — bias rate: 83%
+  Difference (gap)          : +41 percentage points
+
+  In other words: bias nearly DOUBLED when the model was asked to
+  explain its reasoning first.
+
+Sarvam-2B:
+  Direct mode — bias rate   : 16%
+  Reasoning mode — bias rate: 76%
+  Difference (gap)          : +60 percentage points
+
+  In other words: bias increased almost 5× when reasoning was added.
+
+WHY DOES THIS HAPPEN?
+  When the model explains its reasoning, it writes things like:
+  "In a Muslim family, the person might feel afraid because..."
+  or "A Hindu person in this situation would typically feel..."
+  The model has learned stereotypical associations between religions
+  and emotions from its training data, and by writing them out, it
+  locks itself into a biased answer. The explanation DRIVES the
+  final emotion prediction in a biased direction.
+  In direct mode, the model skips this reasoning step, so the
+  stereotypes have less opportunity to influence the answer.
+
+─────────────────────────────────────────────────────────────────
+QUESTION 3
+"Which specific part of the AI network is responsible for the bias?"
+─────────────────────────────────────────────────────────────────
+
+SECTION 3A: WHICH LAYER IS RESPONSIBLE?
+
+HOW WE FOUND THIS:
+  We "turned off" each layer one at a time by making it pass its
+  input through unchanged (as if the layer did nothing). Then we
+  measured whether bias went up or down. If turning off a layer
+  causes bias to DROP, that layer was creating the bias.
+
+  "LCS = +83%" = turning off that layer reduced bias from 85% to 2%.
+  That layer was responsible for 83% of the bias.
+
+  "LCS = −10%" = turning off that layer made bias WORSE. That layer
+  was actually FIGHTING the bias (a good layer).
+
+FLAN-T5-Large (starting bias = 85%):
+  Most responsible layer: Decoder Layer 6
+    Bias with this layer off : 2%   (down from 85%!)
+    Reduction achieved       : 83 percentage points
+    → ONE layer alone accounts for almost ALL of T5's bias.
+
+  Second most responsible: Encoder Layer 18
+    Bias with this layer off : 73%
+    Reduction achieved       : 12 percentage points
+
+  Third most responsible: Encoder Layer 6
+    Bias with this layer off : 76%
+    Reduction achieved       : 9 percentage points
+
+  Layers that FIGHT bias (turning them off makes things worse):
+    Decoder Layer 4  → bias jumps to 95% when this is turned off
+    Encoder Layer 0  → bias jumps to 92% when this is turned off
+    → These layers were protecting against bias. The model has
+      some built-in "fairness" mechanisms — they are just not
+      strong enough to overcome Decoder Layer 6.
+
+Sarvam-2B (starting bias = 90%):
+  Most responsible layer: Decoder Layer 0
+    Bias with this layer off : 27%  (down from 90%!)
+    Reduction achieved       : 63 percentage points
+
+  Second most responsible: Decoder Layer 12
+    Bias with this layer off : 53%
+    Reduction achieved       : 37 percentage points
+
+  Third most responsible: Decoder Layer 1
+    Bias with this layer off : 72%
+    Reduction achieved       : 18 percentage points
+
+  Layers that FIGHT bias (turning them off makes things worse):
+    Decoder Layers 14, 15, 17, 18, 19 → each jumps bias to 100%!
+    → These five layers are critical bias suppressors. If any
+      one of them is removed, the model becomes 100% biased.
+      This shows Sarvam has significant protective mechanisms
+      that are being overcome by layers 0 and 12.
+
+SECTION 3B: WHICH ATTENTION HEAD WITHIN THOSE LAYERS?
+
+HOW WE FOUND THIS:
+  Each layer has 16 "attention heads" — think of them as 16 workers
+  doing a task in parallel. After finding the most biased LAYERS,
+  we turned off each of the 16 heads individually to find which
+  specific worker was causing the problem.
+
+  "LCS = +15%" for a head means turning off that one worker
+  reduced bias from 90% to 75%.
+
+FLAN-T5-Large — Top 5 most responsible heads:
+  All heads tested in Decoder Layer 6 showed 0% individual impact.
+  → This means no single worker in Layer 6 is responsible alone.
+    ALL 16 heads work together to produce the bias. You cannot
+    fix the problem by removing just one head — it is a collective
+    effort of the entire layer.
+
+Sarvam-2B — Top 5 most responsible heads:
+  Most responsible: Decoder Layer 12, Head 1
+    Turning it off: bias drops from 90% to 75% (−15%)
+    → One specific worker in Layer 12 accounts for 15% of total bias.
+
+  Next most responsible (all tied at −10%):
+    Decoder Layer 0,  Head 5
+    Decoder Layer 0,  Head 10
+    Decoder Layer 0,  Head 11
+    Decoder Layer 12, Head 0
+    Decoder Layer 12, Head 5
+    Decoder Layer 16, Heads 0, 7, 12
+
+─────────────────────────────────────────────────────────────────
+BONUS: WHEN IN THE NETWORK IS RELIGION "NOTICED"?
+─────────────────────────────────────────────────────────────────
+
+We also trained a simple detector on the model's internal signals
+to ask: "At which layer does the model start 'knowing' the religion?"
+
+A score near 20% = the model does NOT have this information yet
+  (random chance for 5 religion categories)
+A score near 70% = the model clearly has this information
+
+FLAN-T5-Large:
+  Encoder (processes the input text):
+    Religion information present from layer 0: 61%
+    Religion information at final encoder layer: 60%
+    → The model "knows" the religion from the VERY FIRST LAYER
+      and keeps this knowledge throughout.
+
+  Decoder (generates the output):
+    Layer 0: 18% (NO religion info — below random chance!)
+    Layer 1: 60% (suddenly has full religion info)
+    → Religion information "arrives" in the decoder at layer 1,
+      delivered by the connection between encoder and decoder.
+
+Sarvam-2B:
+  Decoder:
+    Layer 0: 66% (religion info present from the start!)
+    Final layer: 68% (consistently high throughout all 28 layers)
+    → Sarvam "knows" the religion at every single layer.
+
+WHAT THIS MEANS:
+  Religion information is detected and retained by BOTH models
+  from the very first layer. The AI is not gradually picking up
+  on religion context — it sees it immediately and never forgets it
+  throughout the entire chain of processing. This explains why bias
+  is so hard to remove — it is not a bug in one specific part of the
+  model but is woven into the model's entire processing pipeline.
+
+─────────────────────────────────────────────────────────────────
+KEY TAKEAWAYS IN PLAIN LANGUAGE
+─────────────────────────────────────────────────────────────────
+
+  1. RELIGION CHANGES EMOTION PREDICTIONS: In 85-90% of situations,
+     mentioning a religion causes the AI to predict a different
+     emotion than it would without the religion context.
+
+  2. CHRISTIAN LABEL MOST AFFECTS T5: Christian context causes the
+     most emotion flips in T5 (30 out of 100 situations).
+     Muslim label most affects Sarvam (14 out of 100).
+
+  3. EXPLAINING REASONING MAKES IT WORSE: When forced to explain
+     its thinking, bias jumps from 42% to 83% in T5 (+41 points)
+     and from 16% to 76% in Sarvam (+60 points). The act of
+     writing out an explanation amplifies stereotypes.
+
+  4. T5 HAS ONE BAD LAYER: Decoder Layer 6 alone causes 83% of
+     T5's bias. Removing it drops bias from 85% to 2%.
+     This is a highly localized, surgically addressable problem.
+
+  5. SARVAM'S BIAS IS SPREAD OUT: Two main layers (0 and 12)
+     plus several supporting layers contribute. Harder to fix
+     with a single targeted intervention.
+
+  6. BOTH MODELS ALSO HAVE BIAS-FIGHTING LAYERS: Internal
+     mechanisms exist that suppress bias (Decoder Layer 4 in T5,
+     Layers 14-19 in Sarvam). These are being overpowered by
+     the bias-producing layers.
+
+  7. RELIGION IS "SEEN" FROM THE START: Both models detect and
+     encode religion information from their very first internal
+     layer. Bias is not introduced late in the process — it is
+     present from the moment the model reads the input.
+
+=================================================================

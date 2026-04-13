@@ -1,0 +1,344 @@
+{
+  "model": "t5",
+  "layers": {
+    "encoder_layer_0": {
+      "lcs": -7.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 92.0,
+      "cohens_d": 0.5764658785659825
+    },
+    "encoder_layer_1": {
+      "lcs": 2.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 83.0,
+      "cohens_d": 0.16470453673313787
+    },
+    "encoder_layer_2": {
+      "lcs": -1.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 86.0,
+      "cohens_d": 0.08235226836656893
+    },
+    "encoder_layer_3": {
+      "lcs": 8.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 77.0,
+      "cohens_d": 0.6588181469325515
+    },
+    "encoder_layer_4": {
+      "lcs": -5.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 90.0,
+      "cohens_d": 0.4117613418328447
+    },
+    "encoder_layer_5": {
+      "lcs": 3.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 82.0,
+      "cohens_d": 0.24705680509970682
+    },
+    "encoder_layer_6": {
+      "lcs": 9.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 76.0,
+      "cohens_d": 0.7411704152991204
+    },
+    "encoder_layer_7": {
+      "lcs": 4.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 81.0,
+      "cohens_d": 0.32940907346627574
+    },
+    "encoder_layer_8": {
+      "lcs": 4.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 81.0,
+      "cohens_d": 0.32940907346627574
+    },
+    "encoder_layer_9": {
+      "lcs": 2.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 83.0,
+      "cohens_d": 0.16470453673313787
+    },
+    "encoder_layer_10": {
+      "lcs": 2.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 83.0,
+      "cohens_d": 0.16470453673313787
+    },
+    "encoder_layer_11": {
+      "lcs": 0.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 85.0,
+      "cohens_d": 0.0
+    },
+    "encoder_layer_12": {
+      "lcs": 1.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 84.0,
+      "cohens_d": 0.08235226836656893
+    },
+    "encoder_layer_13": {
+      "lcs": 0.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 85.0,
+      "cohens_d": 0.0
+    },
+    "encoder_layer_14": {
+      "lcs": 2.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 83.0,
+      "cohens_d": 0.16470453673313787
+    },
+    "encoder_layer_15": {
+      "lcs": -2.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 87.0,
+      "cohens_d": 0.16470453673313787
+    },
+    "encoder_layer_16": {
+      "lcs": 8.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 77.0,
+      "cohens_d": 0.6588181469325515
+    },
+    "encoder_layer_17": {
+      "lcs": 7.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 78.0,
+      "cohens_d": 0.5764658785659825
+    },
+    "encoder_layer_18": {
+      "lcs": 12.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 73.0,
+      "cohens_d": 0.9882272203988273
+    },
+    "encoder_layer_19": {
+      "lcs": 6.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 79.0,
+      "cohens_d": 0.49411361019941363
+    },
+    "encoder_layer_20": {
+      "lcs": 7.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 78.0,
+      "cohens_d": 0.5764658785659825
+    },
+    "encoder_layer_21": {
+      "lcs": 2.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 83.0,
+      "cohens_d": 0.16470453673313787
+    },
+    "encoder_layer_22": {
+      "lcs": 7.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 78.0,
+      "cohens_d": 0.5764658785659825
+    },
+    "encoder_layer_23": {
+      "lcs": -4.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 89.0,
+      "cohens_d": 0.32940907346627574
+    },
+    "decoder_layer_0": {
+      "lcs": 1.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 84.0,
+      "cohens_d": 0.08235226836656893
+    },
+    "decoder_layer_1": {
+      "lcs": 5.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 80.0,
+      "cohens_d": 0.4117613418328447
+    },
+    "decoder_layer_2": {
+      "lcs": 2.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 83.0,
+      "cohens_d": 0.16470453673313787
+    },
+    "decoder_layer_3": {
+      "lcs": 1.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 84.0,
+      "cohens_d": 0.08235226836656893
+    },
+    "decoder_layer_4": {
+      "lcs": -10.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 95.0,
+      "cohens_d": 0.8235226836656894
+    },
+    "decoder_layer_5": {
+      "lcs": 1.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 84.0,
+      "cohens_d": 0.08235226836656893
+    },
+    "decoder_layer_6": {
+      "lcs": 83.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 2.0,
+      "cohens_d": 6.835238274425222
+    },
+    "decoder_layer_7": {
+      "lcs": 4.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 81.0,
+      "cohens_d": 0.32940907346627574
+    },
+    "decoder_layer_8": {
+      "lcs": 4.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 81.0,
+      "cohens_d": 0.32940907346627574
+    },
+    "decoder_layer_9": {
+      "lcs": 4.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 81.0,
+      "cohens_d": 0.32940907346627574
+    },
+    "decoder_layer_10": {
+      "lcs": 4.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 81.0,
+      "cohens_d": 0.32940907346627574
+    },
+    "decoder_layer_11": {
+      "lcs": 7.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 78.0,
+      "cohens_d": 0.5764658785659825
+    },
+    "decoder_layer_12": {
+      "lcs": 3.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 82.0,
+      "cohens_d": 0.24705680509970682
+    },
+    "decoder_layer_13": {
+      "lcs": 2.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 83.0,
+      "cohens_d": 0.16470453673313787
+    },
+    "decoder_layer_14": {
+      "lcs": 5.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 80.0,
+      "cohens_d": 0.4117613418328447
+    },
+    "decoder_layer_15": {
+      "lcs": 2.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 83.0,
+      "cohens_d": 0.16470453673313787
+    },
+    "decoder_layer_16": {
+      "lcs": 4.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 81.0,
+      "cohens_d": 0.32940907346627574
+    },
+    "decoder_layer_17": {
+      "lcs": 1.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 84.0,
+      "cohens_d": 0.08235226836656893
+    },
+    "decoder_layer_18": {
+      "lcs": 1.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 84.0,
+      "cohens_d": 0.08235226836656893
+    },
+    "decoder_layer_19": {
+      "lcs": 0.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 85.0,
+      "cohens_d": 0.0
+    },
+    "decoder_layer_20": {
+      "lcs": 7.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 78.0,
+      "cohens_d": 0.5764658785659825
+    },
+    "decoder_layer_21": {
+      "lcs": 7.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 78.0,
+      "cohens_d": 0.5764658785659825
+    },
+    "decoder_layer_22": {
+      "lcs": 2.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 83.0,
+      "cohens_d": 0.16470453673313787
+    },
+    "decoder_layer_23": {
+      "lcs": 5.0,
+      "control_bias_rate": 85.0,
+      "ablated_bias_rate": 80.0,
+      "cohens_d": 0.4117613418328447
+    }
+  },
+  "overall_lcs_ttest": {
+    "t_statistic": 2.49355595803989,
+    "p_value": 0.016224275747841257,
+    "significant": true,
+    "mean_lcs": 4.416666666666667,
+    "std_lcs": 12.142956348801096
+  },
+  "bonferroni_alpha": 0.0010416666666666667,
+  "significant_layers": [
+    "decoder_layer_6"
+  ],
+  "religion_Hindu_lcs": {
+    "mean": 4.114583333333333,
+    "std": 6.917098066365852,
+    "t_statistic": 4.078034153521884,
+    "p_value": 0.00017412985894036355,
+    "significant": true
+  },
+  "religion_Muslim_lcs": {
+    "mean": -1.1979166666666667,
+    "std": 7.577199614175117,
+    "t_statistic": -1.0838440749755098,
+    "p_value": 0.28396275821064265,
+    "significant": false
+  },
+  "religion_Sikh_lcs": {
+    "mean": 0.3125,
+    "std": 7.798654397821887,
+    "t_statistic": 0.27471304065271596,
+    "p_value": 0.7847406872926568,
+    "significant": false
+  },
+  "religion_Christian_lcs": {
+    "mean": 2.4479166666666665,
+    "std": 7.4044184326919895,
+    "t_statistic": 2.2664941628819246,
+    "p_value": 0.028065472768673997,
+    "significant": true
+  },
+  "mode_direct_lcs": {
+    "mean": 0.5000000000000003,
+    "std": 9.819198881103624,
+    "t_statistic": 0.3490943957553547,
+    "p_value": 0.7285776417207834
+  },
+  "mode_reasoning_lcs": {
+    "mean": 4.5,
+    "std": 12.065791865158845,
+    "t_statistic": 2.5568521359040166,
+    "p_value": 0.013851548723193012
+  }
+}

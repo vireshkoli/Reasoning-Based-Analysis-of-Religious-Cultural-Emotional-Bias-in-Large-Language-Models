@@ -1,0 +1,108 @@
+{
+  "model": "t5",
+  "num_samples": 1000,
+  "top_rtas_heads": [
+    {
+      "layer": "encoder_attentions_1",
+      "head": 9,
+      "rtas_mean": 0.9582621832378209
+    },
+    {
+      "layer": "encoder_attentions_15",
+      "head": 9,
+      "rtas_mean": 0.949060153029859
+    },
+    {
+      "layer": "encoder_attentions_17",
+      "head": 9,
+      "rtas_mean": 0.9474645469337701
+    },
+    {
+      "layer": "encoder_attentions_19",
+      "head": 9,
+      "rtas_mean": 0.9460279380530119
+    },
+    {
+      "layer": "encoder_attentions_16",
+      "head": 9,
+      "rtas_mean": 0.9455988619476556
+    },
+    {
+      "layer": "encoder_attentions_18",
+      "head": 9,
+      "rtas_mean": 0.9454832030832767
+    },
+    {
+      "layer": "encoder_attentions_23",
+      "head": 9,
+      "rtas_mean": 0.9450488704070449
+    },
+    {
+      "layer": "encoder_attentions_21",
+      "head": 9,
+      "rtas_mean": 0.9444048954173923
+    },
+    {
+      "layer": "encoder_attentions_7",
+      "head": 9,
+      "rtas_mean": 0.9429967395216227
+    },
+    {
+      "layer": "encoder_attentions_22",
+      "head": 9,
+      "rtas_mean": 0.9423946054279804
+    }
+  ],
+  "top_focused_heads": [
+    {
+      "layer": "decoder_attentions_15",
+      "head": 10,
+      "entropy_mean": 0.003680175632092869
+    },
+    {
+      "layer": "decoder_attentions_8",
+      "head": 10,
+      "entropy_mean": 0.004176109252002788
+    },
+    {
+      "layer": "decoder_attentions_13",
+      "head": 10,
+      "entropy_mean": 0.00545063891125028
+    },
+    {
+      "layer": "decoder_attentions_16",
+      "head": 10,
+      "entropy_mean": 0.009150445215869695
+    },
+    {
+      "layer": "decoder_attentions_4",
+      "head": 10,
+      "entropy_mean": 0.012413657354423777
+    },
+    {
+      "layer": "decoder_attentions_1",
+      "head": 10,
+      "entropy_mean": 0.012558206365443766
+    },
+    {
+      "layer": "decoder_attentions_18",
+      "head": 10,
+      "entropy_mean": 0.026258591790217906
+    },
+    {
+      "layer": "decoder_attentions_1",
+      "head": 13,
+      "entropy_mean": 0.026328003582078964
+    },
+    {
+      "layer": "decoder_attentions_10",
+      "head": 10,
+      "entropy_mean": 0.026538093827664852
+    },
+    {
+      "layer": "decoder_attentions_17",
+      "head": 10,
+      "entropy_mean": 0.03152605533786118
+    }
+  ]
+}

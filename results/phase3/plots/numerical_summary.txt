@@ -1,0 +1,593 @@
+================================================================
+  PHASE 3 — COMPLETE NUMERICAL SUMMARY (TECHNICAL PLOTS)
+  All metrics explained in plain language with exact numbers
+================================================================
+
+Every technical term is explained before the numbers are shown.
+This file covers results from all 14 plots in results/phase3/plots/.
+
+================================================================
+SECTION 1 — LAYER-WISE SENSITIVITY SCORE (LSS)
+================================================================
+
+WHAT IS LSS?
+  When you give the model a prompt with a religion (e.g., "In a
+  Hindu family..."), each internal layer produces a slightly
+  different vector of numbers compared to the same prompt with
+  NO religion ("A person..."). LSS measures HOW DIFFERENT these
+  vectors are, as a percentage of the original vector's size.
+
+  Simple analogy: If the "no religion" hidden state is a point in
+  space, LSS tells you how far the "with religion" point is from
+  it, expressed as a fraction of the original distance from zero.
+
+  LSS = 0.30 means the religion-injected vector moved 30% of
+        its own "length" away from the baseline.
+  LSS close to 0 = religion had almost no internal effect at that layer.
+  LSS = 1.0 would mean the vector completely doubled in displacement.
+
+  Higher LSS at a layer ≠ that layer CAUSES bias.
+  LSS only says the layer is SENSITIVE to religion context.
+  Causation is measured separately by LCS (ablation — Section 3).
+
+─────────────────────────────────────────────────────────────
+
+FLAN-T5-Large — ENCODER LSS (processes the input prompt)
+  Layer 0  (first):  0.292  ← highest, religion hits immediately
+  Layer 1:           0.263
+  Layer 7:           0.166
+  Layers 8-22:       0.12–0.13 (plateau — stable low background)
+  Layer 24 (last):   0.214
+
+FLAN-T5-Large — DECODER LSS (generates the output)
+  Layer 0  (first):  0.446  ← strongest of all layers across both models
+  Layer 1:           0.301
+  Layer 7:           0.062
+  Layers 8-23:       0.04–0.06 (flat plateau)
+
+SARVAM-2B — DECODER LSS (only decoder, handles everything)
+  Layer 0  (first):  0.228  ← highest for Sarvam
+  Layer 1:           0.043  ← sharp drop
+  Layers 2-6:        0.04–0.06
+  Layers 7-16:       0.07–0.08 (gradual rise)
+  Layer 28 (last):   0.024
+
+PER-RELIGION LSS AT LAYER 0 (T5 Decoder):
+  Hindu    : 0.451
+  Muslim   : 0.481  ← largest raw displacement
+  Sikh     : 0.425
+  Christian: 0.425
+
+PER-RELIGION LSS AT LAYER 0 (Sarvam Decoder):
+  Hindu    : 0.196
+  Muslim   : 0.201
+  Sikh     : 0.286  ← largest raw displacement for Sarvam
+  Christian: 0.228
+
+KEY TAKEAWAY:
+  → Religion affects internal representations MOST at the very
+    first layer in both models. T5 Decoder Layer 0 (LSS=0.446)
+    and Sarvam Layer 0 (LSS=0.228) are the most sensitive entry
+    points. After that, the effect decays quickly.
+  → "Most raw displacement" ≠ "most bias". Muslim causes the
+    most internal shift in T5's decoder but Christian causes the
+    most PREDICTION changes (30% trigger rate). This shows that
+    how far the representation moves is different from whether
+    it moves far enough to cross the emotion decision boundary.
+
+================================================================
+SECTION 2 — LAYER-WISE BIAS SCORE (LBS)
+================================================================
+
+WHAT IS LBS?
+  While LSS measures the AVERAGE movement caused by all religions,
+  LBS measures whether religions cause DIFFERENT amounts of movement
+  from each other. It is the statistical variance of the LSS values
+  across the four religions.
+
+  Simple analogy: Imagine 4 students walking the same path but
+  sometimes one walks much further than others. LSS = average
+  distance walked. LBS = how unequal the distances are.
+
+  High LBS at a layer = the model is treating religions UNEQUALLY
+    at that layer — this is differential treatment = bias territory.
+  Low LBS = all religions cause similar shifts (equal treatment).
+
+  Note: LBS values are large numbers (thousands/millions) because
+  they are raw variance in high-dimensional space (1024 dims for T5,
+  2048 dims for Sarvam). The RELATIVE rise matters, not the absolute
+  number.
+
+─────────────────────────────────────────────────────────────
+
+FLAN-T5-Large — DECODER LBS
+  Layer 0:   1,783   (low — all religions treated similarly)
+  Layer 5:   7,685   (still low)
+  Layer 6:  16,332   ← sudden 2× jump
+  Layer 7: 115,655   ← sudden 7× explosion
+  Layers 8-22: 110,000–170,000 (stays extremely high)
+  Layer 23: 169,817  ← peak
+  Layer 24:       3   ← drops back to near zero (last embedding)
+
+FLAN-T5-Large — ENCODER LBS
+  Layers 0-6: low (1,600–7,700)
+  Layer 7-18: gradual rise
+  Layer 19: ~41,500,000 ← peak (note: large due to unnormalized variance
+                           in high-dimensional encoder space)
+
+SARVAM-2B — DECODER LBS
+  Layer 0:   0.0009  (near zero — religions treated identically!)
+  Layer 3:   1.83
+  Layer 6:   4.47
+  Layer 7:  60.8    ← first significant rise
+  Layer 9: 176.8
+  Layer 12: 359.6
+  Layer 17: 443.5   ← peak (layers 14-19 all ~400-443)
+  Layer 28:   3.7   ← drops at the end
+
+KEY TAKEAWAY:
+  → T5 Decoder: differential treatment BEGINS at layer 6 and
+    EXPLODES at layer 7 (7× jump). This perfectly matches the
+    ablation result that Decoder Layer 6 is the single most
+    important bias layer. The LBS jump is the LBS-level "fingerprint"
+    of the same event that the LCS measures causally.
+  → Sarvam: builds gradually from layer 7 to a peak at layer 17.
+    No single explosion — consistent with many layers contributing
+    a little each (as seen in ablation results).
+  → Both models drop LBS near zero at the very last layer — the
+    final embedding layer "normalizes" representations, but output
+    predictions are already determined by then.
+
+================================================================
+SECTION 3 — LAYER CONTRIBUTION SCORE (LCS) — ABLATION RESULTS
+================================================================
+
+WHAT IS LCS?
+  LCS directly measures whether a layer CAUSES bias. The method:
+    1. Run the full model on all 1000 prompts → measure bias rate
+    2. "Bypass" one layer (make it output exactly what it received
+       as input, removing its contribution to the computation)
+    3. Re-run all 1000 prompts → measure bias rate again
+    4. LCS = original bias rate − bypassed bias rate
+
+  LCS = +83% means: turning off that layer dropped bias from 85% to 2%.
+    → That layer was RESPONSIBLE for 83% of the bias.
+  LCS = 0% means: the layer had no effect on bias.
+  LCS = −10% means: bypassing that layer made bias WORSE by 10%.
+    → That layer was actively SUPPRESSING bias (a good layer).
+
+  Cohen's d = effect size = how reliable the difference is.
+    d > 0.8 = large effect (meaningful result, not random noise)
+    d > 0.5 = medium effect
+    d < 0.2 = small/negligible effect
+
+─────────────────────────────────────────────────────────────
+
+FLAN-T5-Large — ALL LAYERS RANKED BY LCS
+  (Baseline bias rate = 85%)
+
+  BIAS-CAUSING LAYERS (positive LCS):
+  Layer              LCS    Ablated Bias    Cohen's d
+  ---------------------------------------------------
+  decoder_layer_6   +83%          2%          6.84  ★ extraordinary
+  encoder_layer_18  +12%         73%          0.99  large effect
+  encoder_layer_6    +9%         76%          0.74  medium-large
+  encoder_layer_3    +8%         77%          0.66
+  encoder_layer_16   +8%         77%          0.66
+  encoder_layer_17   +7%         78%          0.58
+  encoder_layer_20   +7%         78%          0.58
+  encoder_layer_22   +7%         78%          0.58
+
+  BIAS-SUPPRESSING LAYERS (negative LCS):
+  Layer              LCS    Ablated Bias    Cohen's d
+  ---------------------------------------------------
+  decoder_layer_4   -10%         95%          0.82  (suppressor)
+  encoder_layer_0    -7%         92%          0.58
+  encoder_layer_4    -5%         90%          0.41
+
+  Statistical significance:
+    Overall t-test: t=2.49, p=0.016 (SIGNIFICANT — p < 0.05)
+    Only layer passing Bonferroni correction: decoder_layer_6
+    → Decoder layer 6 is the ONLY statistically certified bias source.
+      All other layers are smaller contributors.
+    → Bonferroni correction is a stricter test (alpha=0.002) that
+      accounts for testing many layers simultaneously. Only the
+      strongest effect survives this strict filter.
+
+SARVAM-2B — ALL LAYERS RANKED BY LCS
+  (Baseline bias rate = 90%)
+
+  BIAS-CAUSING LAYERS (positive LCS):
+  Layer              LCS    Ablated Bias    Cohen's d
+  ---------------------------------------------------
+  decoder_layer_0   +63%         27%          3.97  ★ very strong
+  decoder_layer_12  +37%         53%          2.33  ★ strong
+  decoder_layer_1   +18%         72%          1.13  large
+  decoder_layer_16  +16%         74%          1.01  large
+  decoder_layer_11  +15%         75%          0.95
+  decoder_layer_27  +11%         79%          0.69
+  decoder_layer_8    +9%         81%          0.57
+  decoder_layer_10   +6%         84%          0.38
+
+  BIAS-SUPPRESSING LAYERS (negative LCS):
+  Layer              LCS    Ablated Bias    Cohen's d
+  ---------------------------------------------------
+  decoder_layer_14  -10%        100%  (suppressor — causes 100% bias if removed!)
+  decoder_layer_15  -10%        100%
+  decoder_layer_17  -10%        100%
+  decoder_layer_18  -10%        100%
+  decoder_layer_19  -10%        100%
+
+  Statistical significance:
+    Overall t-test: t=1.02, p=0.318 (NOT SIGNIFICANT overall)
+    Layers passing Bonferroni correction: decoder_layer_0, decoder_layer_12
+    → Two layers are statistically certified as bias sources for Sarvam.
+    → The overall test is not significant because many small effects
+      cancel out, but the two key layers individually are significant.
+    → The suppressor layers (14-19) are striking: removing ANY of them
+      pushes bias to 100%. These are the model's "bias brakes" — internal
+      mechanisms that partially counteract the bias.
+
+KEY TAKEAWAY:
+  → T5: ONE layer dominates (Decoder-6, Cohen's d=6.84 — an enormous
+    effect size). The rest have minor effects.
+  → Sarvam: TWO primary layers (0 and 12) plus 6 secondary layers.
+    The bias is more spread out — harder to "fix" with one intervention.
+  → Both models have bias-SUPPRESSING layers — the models are NOT
+    purely biased. They have internal correction mechanisms that are
+    simply outvoted by the bias-causing layers.
+
+================================================================
+SECTION 4 — ATTENTION HEAD ABLATION (LCS PER HEAD)
+================================================================
+
+WHAT IS HEAD ABLATION?
+  After identifying the most bias-causing LAYERS (Section 3), we
+  then test each individual attention HEAD within those layers.
+  A transformer layer has 16 attention heads that work in parallel.
+  We zero out one head at a time and measure the change in bias.
+
+  Head LCS = bias rate without that head − baseline bias rate
+  (Note: sign is opposite to layer LCS convention — zeroing a head
+  reduces bias if the head was causing it.)
+
+─────────────────────────────────────────────────────────────
+
+FLAN-T5-Large — HEAD ABLATION RESULTS
+  (Tested on top-5 bias layers: dec-6, enc-18, enc-6, dec-4, enc-0)
+  (Subset: 20 scenarios × 5 religions × 2 modes = 200 predictions)
+
+  Top impactful heads (ablating REDUCES bias):
+    All heads in decoder_layer_6 and encoder_layer_18 showed
+    LCS ≈ 0% when ablated individually.
+    → This means bias in T5's Decoder Layer 6 is NOT caused by
+      any single head alone — ALL 16 heads work together as a unit.
+      Removing one head out of 16 is not enough to disrupt the bias.
+    → The layer acts as a COLLECTIVE — like a committee decision
+      that requires all members agreeing.
+
+  Most focused decoder head (very sharp attention):
+    Decoder Layer 15, Head 10: entropy = 0.0037 (near zero!)
+    Decoder Layer 8,  Head 10: entropy = 0.0042
+    → Head 10 appears to be an extremely specialized "singleton"
+      head that attends to exactly one or two tokens.
+
+SARVAM-2B — HEAD ABLATION RESULTS
+  (Tested on top-5 bias layers: dec-0, dec-12, dec-1, dec-16, dec-14)
+
+  Top impactful heads (ablating REDUCES bias):
+  Head                      Bias without head    Change vs 90%
+  -------------------------------------------------------------
+  decoder_layer_12_head_1       75%              −15% (reduces bias)
+  decoder_layer_0_head_5        80%              −10%
+  decoder_layer_0_head_10       80%              −10%
+  decoder_layer_0_head_11       80%              −10%
+  decoder_layer_12_head_0       80%              −10%
+  decoder_layer_12_head_5       80%              −10%
+  decoder_layer_16_heads 0,7,12 80%              −10% each
+
+  → Decoder Layer 12, Head 1 is the single most impactful head
+    (−15% bias reduction when zeroed out).
+  → This head specifically drives DIRECT MODE bias: ablating it
+    drops direct-mode bias to 0% while leaving reasoning-mode
+    bias partially intact.
+
+KEY TAKEAWAY:
+  → T5's bias = a LAYER-level phenomenon (collective computation,
+    no single responsible head). Very hard to surgically remove.
+  → Sarvam's bias = can be partially attributed to SPECIFIC HEADS
+    (Layer 12 Head 1 is most responsible). A more targeted fix
+    is theoretically possible for Sarvam.
+
+================================================================
+SECTION 5 — PROBING CLASSIFIER ACCURACY
+================================================================
+
+WHAT IS PROBING ACCURACY?
+  We train a simple logistic regression (a basic linear model) to
+  predict either the emotion label OR the religion label from the
+  hidden state vectors at each layer.
+
+  If accuracy is high → that layer's hidden state "contains" that
+    information in a linearly separable way (easy to extract).
+  If accuracy is near 20% → random chance (5 classes, 1/5 = 20%).
+  If accuracy is well above 20% → the information is there.
+
+  This tells us WHEN the model "knows" things — which layer first
+  encodes religion or emotion information.
+
+─────────────────────────────────────────────────────────────
+
+FLAN-T5-Large — ENCODER RELIGION PROBE
+  (Does the encoder's hidden state let you predict which religion?)
+  Layer 0:  61.2%  ← present from the very first layer
+  Layer 5:  62.4%  ← peak
+  Layers 0-24: consistently 59.8–62.7% (very stable throughout)
+  → Religion is ALWAYS encoded in the encoder, from start to finish.
+    No single layer is where religion "enters" — it's already there.
+
+FLAN-T5-Large — ENCODER EMOTION PROBE
+  Layer 0:  52.0%  (barely above chance)
+  Layers 0-24: 49.6–53.2% (very stable, near chance level)
+  → The encoder has very limited emotion information — it processes
+    the input text but doesn't commit to an emotion prediction.
+    The scenario text contributes weakly to emotion encoding.
+
+FLAN-T5-Large — DECODER RELIGION PROBE
+  Layer 0:  17.7%  ← BELOW random chance! No religion info at all.
+  Layer 1:  59.9%  ← JUMPS to 60% at layer 1
+  Layers 1-24: 53.4–60.0% (stable, stays high)
+  → Religion information "floods" into the decoder at Layer 1,
+    where cross-attention brings in the encoder's knowledge.
+
+FLAN-T5-Large — DECODER EMOTION PROBE
+  Layer 0:  25.6%  (barely above chance)
+  Layer 1:  47.1%  ← JUMPS at layer 1
+  Layers 1-24: 48.3–51.3% (stable, moderate)
+  → Same jump at layer 1 for emotion. Decoder Layer 1 is the
+    "loading dock" where both religion and emotion information
+    arrive from the encoder via cross-attention.
+
+SARVAM-2B — DECODER RELIGION PROBE
+  Layer 0:  65.9%  ← high from the very start
+  Layer 12: 69.5%  ← peak
+  Layers 0-28: 65.9–69.5% (extremely stable)
+  → Sarvam has the highest and most stable religion encoding.
+    Religion information is baked in from layer 0 and maintained
+    across all 28 layers without any sudden jumps.
+
+SARVAM-2B — DECODER EMOTION PROBE
+  Layer 0:  69.5%  ← even higher than religion probe!
+  Layer 15: 72.3%  ← slight peak
+  Layers 0-28: 69.5–72.9% (extremely stable)
+  → Sarvam also has very high emotion encoding from the start.
+    The model "knows" both the emotion and the religion throughout
+    its entire computation, which explains its high overall bias rate.
+
+KEY TAKEAWAY:
+  → Religion is encoded from LAYER 0 in all cases. There is no
+    layer where "religion first enters" — it was always there.
+  → T5 decoder has one unique transition: layer 0 has almost NO
+    religion/emotion info (17.7%, 25.6%), then layer 1 has it all.
+    This is the cross-attention mechanism delivering encoder output.
+  → Sarvam's probing accuracy (66-73%) is higher than T5's decoder
+    (53-60%) — meaning religion and emotion are MORE clearly encoded
+    in Sarvam's hidden states. This is consistent with Sarvam having
+    a higher overall bias rate (90% vs T5's 85%).
+
+================================================================
+SECTION 6 — ATTENTION ENTROPY
+================================================================
+
+WHAT IS ATTENTION ENTROPY?
+  Each attention head distributes its "attention budget" across all
+  tokens in the sequence. Entropy measures how evenly this budget
+  is spread.
+
+  High entropy (e.g., 3.0) = attention is spread across many tokens,
+    like listening to a crowd without focusing on anyone.
+  Low entropy (e.g., 0.1) = attention is concentrated on very few
+    tokens, like a spotlight on one speaker.
+
+  The maximum possible entropy depends on sequence length.
+  For short sequences: max ~2-3 nats. For long sequences: higher.
+
+─────────────────────────────────────────────────────────────
+
+FLAN-T5-Large — ENCODER ATTENTION ENTROPY
+  Layer 0:  1.89  (moderate)
+  Layer 1:  0.55  ← very low! Sharply focused
+  Layers 2-23: 2.04–2.41 (diffuse, spread attention)
+  → Encoder Layer 1 has anomalously sharp focus — this is where
+    Head 9 (the religion detector) is focusing 96% of its attention
+    on religion tokens, pulling the layer average down dramatically.
+
+FLAN-T5-Large — DECODER ATTENTION ENTROPY
+  Most focused head: Layer 15, Head 10: entropy = 0.004
+  Layer averages: 0.18–0.40 (all very low)
+  → The decoder is extremely focused in all layers — generating
+    tokens left-to-right means only previous tokens are attended to,
+    and only a few matter for the next prediction.
+
+SARVAM-2B — DECODER ATTENTION ENTROPY
+  Layer 0:  3.27  ← very high (most diffuse)
+  Layer 1:  2.86
+  Layers 3-6:  1.74–1.77  (more focused)
+  Layers 7-20: 2.0–2.1   (moderate)
+  Layers 21-25: 1.64–1.74 (focused again)
+  Most focused head: Layer 17, Head 6: entropy = 0.979
+  → Sarvam is much more diffuse than T5. Processing the full
+    sequence at once means every token can attend to every
+    other token, making attention naturally more spread out.
+
+KEY TAKEAWAY:
+  → T5 Encoder Layer 1's low entropy (0.55) is a clear signature
+    of Head 9 — the religion token specialist.
+  → Sarvam's high entropy (1.64–3.27) explains its distributed
+    bias: religion information is in the "background" of broad
+    attention rather than captured by one specialized head.
+
+================================================================
+SECTION 7 — RELIGION TOKEN ATTENTION SCORE (RTAS)
+================================================================
+
+WHAT IS RTAS?
+  For each (layer, head) pair, RTAS measures what fraction of that
+  head's attention weight is directed specifically at the religion
+  tokens in the prompt (the words "Hindu", "Muslim", "Sikh",
+  "Christian"). It ranges from 0 to 1.
+
+  RTAS = 1.0 → that head pays 100% attention to religion tokens
+  RTAS = 0.0 → that head never looks at religion tokens
+
+  High RTAS identifies "religion detector" heads — heads that are
+  tracking the religion context throughout processing.
+
+─────────────────────────────────────────────────────────────
+
+FLAN-T5-Large — TOP RTAS HEADS:
+  Head                          RTAS
+  ----------------------------------
+  Encoder Layer 1,  Head 9:   0.958
+  Encoder Layer 15, Head 9:   0.949
+  Encoder Layer 17, Head 9:   0.947
+  Encoder Layer 19, Head 9:   0.946
+  Encoder Layer 16, Head 9:   0.946
+  Encoder Layer 18, Head 9:   0.945
+  Encoder Layer 23, Head 9:   0.945
+  Encoder Layer 21, Head 9:   0.944
+  Encoder Layer 7,  Head 9:   0.943
+  Encoder Layer 22, Head 9:   0.942
+  → EVERY top-10 slot is Head 9, across layers 1, 7, 15-23.
+    This is the most striking finding: one head (#9) tracks
+    religion across virtually the entire encoder stack.
+
+SARVAM-2B — TOP RTAS HEADS:
+  Head                          RTAS
+  ----------------------------------
+  Decoder Layer 27, Head 5:   0.770
+  Decoder Layer 2,  Head 7:   0.763
+  Decoder Layer 1,  Head 15:  0.760
+  Decoder Layer 27, Head 4:   0.754
+  Decoder Layer 0,  Head 13:  0.747
+  Decoder Layer 12, Head 11:  0.747
+  Decoder Layer 12, Head 10:  0.745
+  Decoder Layer 1,  Head 13:  0.742
+  Decoder Layer 0,  Head 6:   0.739
+  Decoder Layer 10, Head 6:   0.738
+  → Multiple different heads across layers 0, 1, 2, 10, 12, 27.
+    No single head dominates. RTAS values (~0.74-0.77) are lower
+    than T5's (0.94-0.96) partly because Sarvam's longer sequences
+    dilute attention — even a "religion-focused" head has many
+    other tokens competing for attention.
+
+KEY TAKEAWAY:
+  → T5: ONE head (Encoder Head 9) is the dedicated religion sensor,
+    consistent across almost all encoder layers.
+  → Sarvam: many heads share the religion-sensing role.
+  → Both models are actively tracking religion tokens throughout
+    their computation, which directly enables the observed bias.
+
+================================================================
+SECTION 8 — CROSS-MODEL SIMILARITY (CKA)
+================================================================
+
+WHAT IS CKA?
+  Centered Kernel Alignment (CKA) measures how similar two sets of
+  hidden state representations are. We use it to compare T5 and
+  Sarvam — do they "think" in similar ways at corresponding layers?
+
+  CKA = 1.0 → the representations are identical (same structure)
+  CKA = 0.0 → the representations are completely different
+  CKA ≈ 0.9 → very similar (functionally equivalent)
+  CKA ≈ 0.1 → very different
+
+─────────────────────────────────────────────────────────────
+
+T5 ENCODER vs SARVAM DECODER (top CKA pairs):
+  T5-enc-0  vs Sarvam-0:   CKA = 0.928  ← almost identical!
+  T5-enc-0  vs Sarvam-27:  CKA = 0.893
+  T5-enc-0  vs Sarvam-26:  CKA = 0.847
+  T5-enc-24 vs Sarvam-0:   CKA = 0.836
+  T5-enc-24 vs Sarvam-27:  CKA = 0.825
+  → T5 Encoder Layer 0 and Sarvam Layer 0 produce nearly
+    identical representations (CKA=0.928). Despite being very
+    different architectures, the FIRST LAYER of both models
+    creates the same internal structure.
+  → This confirms that both models handle input embeddings in
+    a nearly universal way — the initial representation of
+    "what words mean" is consistent across architectures.
+
+T5 DECODER vs SARVAM DECODER (top CKA pairs):
+  T5-dec-23 vs Sarvam-8:   CKA = 0.119  ← highest possible
+  Most pairs:               CKA ≈ 0.05-0.12
+  → T5's decoder representations are almost completely different
+    from Sarvam's. After the first layer, the two architectures
+    develop their own internal representations.
+
+KEY TAKEAWAY:
+  → Input representation (layer 0) is nearly universal across
+    models (CKA=0.928). The way models "see" the first token
+    of text is very consistent.
+  → Internal processing layers are model-specific (CKA < 0.12).
+    T5 and Sarvam develop their OWN ways of processing information
+    internally after the first layer.
+  → This means model-specific interventions are needed to reduce
+    bias — fixing T5's Decoder Layer 6 does nothing for Sarvam
+    (they don't share that representational structure).
+
+================================================================
+OVERALL STATISTICAL VALIDATION
+================================================================
+
+STATISTICAL SIGNIFICANCE OF LAYER CONTRIBUTIONS:
+
+  FLAN-T5-Large:
+    Paired t-test on LCS across all layers:
+      t-statistic: 2.49,  p-value: 0.016  → SIGNIFICANT (p < 0.05)
+    Layers significant after Bonferroni correction (α=0.002):
+      decoder_layer_6 only
+    Mean LCS across all layers: +4.4%
+    → The overall pattern of layers contributing to bias is
+      statistically significant. One layer (decoder-6) survives
+      the strictest statistical test.
+
+  SARVAM-2B:
+    Paired t-test on LCS across all layers:
+      t-statistic: 1.02,  p-value: 0.318  → NOT SIGNIFICANT overall
+    Layers significant after Bonferroni correction (α=0.0017):
+      decoder_layer_0, decoder_layer_12
+    Mean LCS across all layers: +3.1%
+    → The overall pattern is not significant (many small/negative
+      effects cancel out), but the two key layers individually pass.
+    → This reflects Sarvam's distributed bias — no one pattern
+      stands out globally, but two specific layers are confirmed.
+
+COHEN'S d — EFFECT SIZE REFERENCE:
+  d < 0.2  = negligible (noise)
+  d = 0.5  = medium effect (practically meaningful)
+  d = 0.8  = large effect (clearly meaningful)
+  d > 1.0  = very large effect (striking result)
+  d = 6.84 = T5 Decoder Layer 6 (extraordinary — far beyond typical scale)
+
+================================================================
+FULL SUMMARY TABLE: KEY NUMBERS AT A GLANCE
+================================================================
+
+                                     T5-Large    Sarvam-2B
+                                     ─────────   ─────────
+Overall baseline bias rate             85%          90%
+Most impactful single layer         Dec-6 (+83%) Dec-0 (+63%)
+Effect size of top layer (Cohen's d)   6.84         3.97
+Ablated bias with top layer removed     2%          27%
+Statistically significant layers        1            2
+Bias-suppressing layers (negative LCS)  5            5
+Decoder LBS spike first appears       Layer 6     Layer 7
+Religion probe accuracy (first layer)  61.2%       65.9%
+Emotion probe accuracy (first layer)   52.0%       69.5%
+Top RTAS head                    Enc-Head-9(0.96) Dec-L27-H5(0.77)
+Number of dominant religion heads       1           10+
+CKA with other model (layer 0)         0.928        0.928
+CKA at internal layers               < 0.12       < 0.12
+
+================================================================

@@ -1,0 +1,1442 @@
+{
+  "decoder_layer_6_head_0": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 0,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 35.0,
+        "Muslim": 37.5,
+        "Sikh": 35.0,
+        "Christian": 37.5
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "decoder_layer_6_head_1": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 1,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 50.0,
+        "Muslim": 55.00000000000001,
+        "Sikh": 50.0,
+        "Christian": 40.0
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "decoder_layer_6_head_2": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 2,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 52.5,
+        "Muslim": 42.5,
+        "Sikh": 42.5,
+        "Christian": 47.5
+      },
+      "mode_bias": {
+        "direct": 50.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "decoder_layer_6_head_3": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 3,
+    "metrics": {
+      "scenario_bias_rate": 85.0,
+      "religion_trigger_bias": {
+        "Hindu": 40.0,
+        "Muslim": 45.0,
+        "Sikh": 47.5,
+        "Christian": 52.5
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 80.0
+      }
+    }
+  },
+  "decoder_layer_6_head_4": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 4,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 47.5,
+        "Muslim": 62.5,
+        "Sikh": 45.0,
+        "Christian": 52.5
+      },
+      "mode_bias": {
+        "direct": 70.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "decoder_layer_6_head_5": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 5,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 50.0,
+        "Muslim": 50.0,
+        "Sikh": 50.0,
+        "Christian": 57.49999999999999
+      },
+      "mode_bias": {
+        "direct": 70.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "decoder_layer_6_head_6": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 6,
+    "metrics": {
+      "scenario_bias_rate": 85.0,
+      "religion_trigger_bias": {
+        "Hindu": 42.5,
+        "Muslim": 47.5,
+        "Sikh": 40.0,
+        "Christian": 55.00000000000001
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 80.0
+      }
+    }
+  },
+  "decoder_layer_6_head_7": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 7,
+    "metrics": {
+      "scenario_bias_rate": 85.0,
+      "religion_trigger_bias": {
+        "Hindu": 50.0,
+        "Muslim": 50.0,
+        "Sikh": 47.5,
+        "Christian": 52.5
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 75.0
+      }
+    }
+  },
+  "decoder_layer_6_head_8": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 8,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 50.0,
+        "Muslim": 52.5,
+        "Sikh": 55.00000000000001,
+        "Christian": 40.0
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "decoder_layer_6_head_9": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 9,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 52.5,
+        "Muslim": 57.49999999999999,
+        "Sikh": 40.0,
+        "Christian": 45.0
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "decoder_layer_6_head_10": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 10,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 50.0,
+        "Muslim": 62.5,
+        "Sikh": 57.49999999999999,
+        "Christian": 52.5
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "decoder_layer_6_head_11": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 11,
+    "metrics": {
+      "scenario_bias_rate": 85.0,
+      "religion_trigger_bias": {
+        "Hindu": 40.0,
+        "Muslim": 50.0,
+        "Sikh": 47.5,
+        "Christian": 45.0
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 80.0
+      }
+    }
+  },
+  "decoder_layer_6_head_12": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 12,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 57.49999999999999,
+        "Muslim": 42.5,
+        "Sikh": 42.5,
+        "Christian": 45.0
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "decoder_layer_6_head_13": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 13,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 37.5,
+        "Muslim": 45.0,
+        "Sikh": 35.0,
+        "Christian": 45.0
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "decoder_layer_6_head_14": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 14,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 47.5,
+        "Muslim": 42.5,
+        "Sikh": 47.5,
+        "Christian": 42.5
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "decoder_layer_6_head_15": {
+    "layer_type": "decoder",
+    "layer_idx": 6,
+    "head_idx": 15,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 40.0,
+        "Muslim": 50.0,
+        "Sikh": 47.5,
+        "Christian": 42.5
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "encoder_layer_18_head_0": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 0,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 45.0,
+        "Muslim": 52.5,
+        "Sikh": 42.5,
+        "Christian": 52.5
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_18_head_1": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 1,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 45.0,
+        "Muslim": 45.0,
+        "Sikh": 45.0,
+        "Christian": 35.0
+      },
+      "mode_bias": {
+        "direct": 50.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "encoder_layer_18_head_2": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 2,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 45.0,
+        "Muslim": 52.5,
+        "Sikh": 45.0,
+        "Christian": 47.5
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_18_head_3": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 3,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 45.0,
+        "Muslim": 55.00000000000001,
+        "Sikh": 45.0,
+        "Christian": 52.5
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "encoder_layer_18_head_4": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 4,
+    "metrics": {
+      "scenario_bias_rate": 85.0,
+      "religion_trigger_bias": {
+        "Hindu": 52.5,
+        "Muslim": 45.0,
+        "Sikh": 50.0,
+        "Christian": 45.0
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 80.0
+      }
+    }
+  },
+  "encoder_layer_18_head_5": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 5,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 37.5,
+        "Muslim": 57.49999999999999,
+        "Sikh": 37.5,
+        "Christian": 57.49999999999999
+      },
+      "mode_bias": {
+        "direct": 50.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_18_head_6": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 6,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 37.5,
+        "Muslim": 52.5,
+        "Sikh": 50.0,
+        "Christian": 50.0
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_18_head_7": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 7,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 47.5,
+        "Muslim": 47.5,
+        "Sikh": 52.5,
+        "Christian": 47.5
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_18_head_8": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 8,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 50.0,
+        "Muslim": 50.0,
+        "Sikh": 37.5,
+        "Christian": 35.0
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "encoder_layer_18_head_9": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 9,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 47.5,
+        "Muslim": 35.0,
+        "Sikh": 45.0,
+        "Christian": 40.0
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_18_head_10": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 10,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 55.00000000000001,
+        "Muslim": 57.49999999999999,
+        "Sikh": 47.5,
+        "Christian": 55.00000000000001
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_18_head_11": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 11,
+    "metrics": {
+      "scenario_bias_rate": 85.0,
+      "religion_trigger_bias": {
+        "Hindu": 42.5,
+        "Muslim": 47.5,
+        "Sikh": 37.5,
+        "Christian": 50.0
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "encoder_layer_18_head_12": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 12,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 52.5,
+        "Muslim": 55.00000000000001,
+        "Sikh": 40.0,
+        "Christian": 35.0
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "encoder_layer_18_head_13": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 13,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 52.5,
+        "Muslim": 47.5,
+        "Sikh": 60.0,
+        "Christian": 47.5
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_18_head_14": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 14,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 37.5,
+        "Muslim": 57.49999999999999,
+        "Sikh": 52.5,
+        "Christian": 42.5
+      },
+      "mode_bias": {
+        "direct": 45.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_18_head_15": {
+    "layer_type": "encoder",
+    "layer_idx": 18,
+    "head_idx": 15,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 40.0,
+        "Muslim": 45.0,
+        "Sikh": 32.5,
+        "Christian": 47.5
+      },
+      "mode_bias": {
+        "direct": 45.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "decoder_layer_4_head_0": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 0,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 35.0,
+        "Muslim": 47.5,
+        "Sikh": 52.5,
+        "Christian": 45.0
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "decoder_layer_4_head_1": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 1,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 47.5,
+        "Muslim": 50.0,
+        "Sikh": 57.49999999999999,
+        "Christian": 47.5
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "decoder_layer_4_head_2": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 2,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 35.0,
+        "Muslim": 42.5,
+        "Sikh": 37.5,
+        "Christian": 37.5
+      },
+      "mode_bias": {
+        "direct": 50.0,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "decoder_layer_4_head_3": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 3,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 40.0,
+        "Muslim": 50.0,
+        "Sikh": 37.5,
+        "Christian": 45.0
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "decoder_layer_4_head_4": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 4,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 42.5,
+        "Muslim": 52.5,
+        "Sikh": 52.5,
+        "Christian": 47.5
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "decoder_layer_4_head_5": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 5,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 45.0,
+        "Muslim": 50.0,
+        "Sikh": 40.0,
+        "Christian": 52.5
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "decoder_layer_4_head_6": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 6,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 45.0,
+        "Muslim": 37.5,
+        "Sikh": 45.0,
+        "Christian": 42.5
+      },
+      "mode_bias": {
+        "direct": 50.0,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "decoder_layer_4_head_7": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 7,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 37.5,
+        "Muslim": 37.5,
+        "Sikh": 47.5,
+        "Christian": 47.5
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "decoder_layer_4_head_8": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 8,
+    "metrics": {
+      "scenario_bias_rate": 100.0,
+      "religion_trigger_bias": {
+        "Hindu": 32.5,
+        "Muslim": 45.0,
+        "Sikh": 32.5,
+        "Christian": 45.0
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 100.0
+      }
+    }
+  },
+  "decoder_layer_4_head_9": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 9,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 42.5,
+        "Muslim": 47.5,
+        "Sikh": 45.0,
+        "Christian": 50.0
+      },
+      "mode_bias": {
+        "direct": 45.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "decoder_layer_4_head_10": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 10,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 60.0,
+        "Muslim": 47.5,
+        "Sikh": 42.5,
+        "Christian": 57.49999999999999
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "decoder_layer_4_head_11": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 11,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 42.5,
+        "Muslim": 45.0,
+        "Sikh": 47.5,
+        "Christian": 47.5
+      },
+      "mode_bias": {
+        "direct": 50.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "decoder_layer_4_head_12": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 12,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 52.5,
+        "Muslim": 35.0,
+        "Sikh": 32.5,
+        "Christian": 42.5
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "decoder_layer_4_head_13": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 13,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 37.5,
+        "Muslim": 45.0,
+        "Sikh": 40.0,
+        "Christian": 45.0
+      },
+      "mode_bias": {
+        "direct": 50.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "decoder_layer_4_head_14": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 14,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 45.0,
+        "Muslim": 50.0,
+        "Sikh": 57.49999999999999,
+        "Christian": 57.49999999999999
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "decoder_layer_4_head_15": {
+    "layer_type": "decoder",
+    "layer_idx": 4,
+    "head_idx": 15,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 47.5,
+        "Muslim": 55.00000000000001,
+        "Sikh": 32.5,
+        "Christian": 47.5
+      },
+      "mode_bias": {
+        "direct": 45.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_6_head_0": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 0,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 47.5,
+        "Muslim": 47.5,
+        "Sikh": 37.5,
+        "Christian": 42.5
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "encoder_layer_6_head_1": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 1,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 47.5,
+        "Muslim": 37.5,
+        "Sikh": 47.5,
+        "Christian": 42.5
+      },
+      "mode_bias": {
+        "direct": 45.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "encoder_layer_6_head_2": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 2,
+    "metrics": {
+      "scenario_bias_rate": 85.0,
+      "religion_trigger_bias": {
+        "Hindu": 50.0,
+        "Muslim": 60.0,
+        "Sikh": 47.5,
+        "Christian": 45.0
+      },
+      "mode_bias": {
+        "direct": 70.0,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "encoder_layer_6_head_3": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 3,
+    "metrics": {
+      "scenario_bias_rate": 85.0,
+      "religion_trigger_bias": {
+        "Hindu": 42.5,
+        "Muslim": 52.5,
+        "Sikh": 40.0,
+        "Christian": 45.0
+      },
+      "mode_bias": {
+        "direct": 45.0,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "encoder_layer_6_head_4": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 4,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 50.0,
+        "Muslim": 42.5,
+        "Sikh": 52.5,
+        "Christian": 45.0
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "encoder_layer_6_head_5": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 5,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 35.0,
+        "Muslim": 45.0,
+        "Sikh": 40.0,
+        "Christian": 50.0
+      },
+      "mode_bias": {
+        "direct": 45.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "encoder_layer_6_head_6": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 6,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 35.0,
+        "Muslim": 50.0,
+        "Sikh": 45.0,
+        "Christian": 37.5
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "encoder_layer_6_head_7": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 7,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 50.0,
+        "Muslim": 52.5,
+        "Sikh": 50.0,
+        "Christian": 42.5
+      },
+      "mode_bias": {
+        "direct": 45.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "encoder_layer_6_head_8": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 8,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 45.0,
+        "Muslim": 55.00000000000001,
+        "Sikh": 55.00000000000001,
+        "Christian": 47.5
+      },
+      "mode_bias": {
+        "direct": 70.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_6_head_9": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 9,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 42.5,
+        "Muslim": 57.49999999999999,
+        "Sikh": 52.5,
+        "Christian": 50.0
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_6_head_10": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 10,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 55.00000000000001,
+        "Muslim": 57.49999999999999,
+        "Sikh": 60.0,
+        "Christian": 57.49999999999999
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_6_head_11": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 11,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 47.5,
+        "Muslim": 47.5,
+        "Sikh": 47.5,
+        "Christian": 42.5
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "encoder_layer_6_head_12": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 12,
+    "metrics": {
+      "scenario_bias_rate": 85.0,
+      "religion_trigger_bias": {
+        "Hindu": 37.5,
+        "Muslim": 60.0,
+        "Sikh": 40.0,
+        "Christian": 42.5
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "encoder_layer_6_head_13": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 13,
+    "metrics": {
+      "scenario_bias_rate": 85.0,
+      "religion_trigger_bias": {
+        "Hindu": 32.5,
+        "Muslim": 47.5,
+        "Sikh": 55.00000000000001,
+        "Christian": 50.0
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "encoder_layer_6_head_14": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 14,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 35.0,
+        "Muslim": 55.00000000000001,
+        "Sikh": 45.0,
+        "Christian": 47.5
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_6_head_15": {
+    "layer_type": "encoder",
+    "layer_idx": 6,
+    "head_idx": 15,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 50.0,
+        "Muslim": 32.5,
+        "Sikh": 50.0,
+        "Christian": 52.5
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "encoder_layer_3_head_0": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 0,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 47.5,
+        "Muslim": 52.5,
+        "Sikh": 55.00000000000001,
+        "Christian": 45.0
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_3_head_1": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 1,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 35.0,
+        "Muslim": 42.5,
+        "Sikh": 50.0,
+        "Christian": 60.0
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "encoder_layer_3_head_2": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 2,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 55.00000000000001,
+        "Muslim": 42.5,
+        "Sikh": 45.0,
+        "Christian": 55.00000000000001
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "encoder_layer_3_head_3": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 3,
+    "metrics": {
+      "scenario_bias_rate": 100.0,
+      "religion_trigger_bias": {
+        "Hindu": 52.5,
+        "Muslim": 47.5,
+        "Sikh": 40.0,
+        "Christian": 40.0
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_3_head_4": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 4,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 47.5,
+        "Muslim": 65.0,
+        "Sikh": 50.0,
+        "Christian": 47.5
+      },
+      "mode_bias": {
+        "direct": 50.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_3_head_5": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 5,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 40.0,
+        "Muslim": 60.0,
+        "Sikh": 50.0,
+        "Christian": 42.5
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "encoder_layer_3_head_6": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 6,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 42.5,
+        "Muslim": 45.0,
+        "Sikh": 55.00000000000001,
+        "Christian": 37.5
+      },
+      "mode_bias": {
+        "direct": 70.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "encoder_layer_3_head_7": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 7,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 40.0,
+        "Muslim": 45.0,
+        "Sikh": 50.0,
+        "Christian": 52.5
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "encoder_layer_3_head_8": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 8,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 50.0,
+        "Muslim": 47.5,
+        "Sikh": 62.5,
+        "Christian": 47.5
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_3_head_9": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 9,
+    "metrics": {
+      "scenario_bias_rate": 100.0,
+      "religion_trigger_bias": {
+        "Hindu": 55.00000000000001,
+        "Muslim": 45.0,
+        "Sikh": 57.49999999999999,
+        "Christian": 32.5
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_3_head_10": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 10,
+    "metrics": {
+      "scenario_bias_rate": 85.0,
+      "religion_trigger_bias": {
+        "Hindu": 52.5,
+        "Muslim": 45.0,
+        "Sikh": 42.5,
+        "Christian": 37.5
+      },
+      "mode_bias": {
+        "direct": 50.0,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "encoder_layer_3_head_11": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 11,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 50.0,
+        "Muslim": 47.5,
+        "Sikh": 57.49999999999999,
+        "Christian": 55.00000000000001
+      },
+      "mode_bias": {
+        "direct": 65.0,
+        "reasoning": 95.0
+      }
+    }
+  },
+  "encoder_layer_3_head_12": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 12,
+    "metrics": {
+      "scenario_bias_rate": 95.0,
+      "religion_trigger_bias": {
+        "Hindu": 37.5,
+        "Muslim": 37.5,
+        "Sikh": 50.0,
+        "Christian": 35.0
+      },
+      "mode_bias": {
+        "direct": 45.0,
+        "reasoning": 90.0
+      }
+    }
+  },
+  "encoder_layer_3_head_13": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 13,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 42.5,
+        "Muslim": 40.0,
+        "Sikh": 50.0,
+        "Christian": 40.0
+      },
+      "mode_bias": {
+        "direct": 60.0,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "encoder_layer_3_head_14": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 14,
+    "metrics": {
+      "scenario_bias_rate": 85.0,
+      "religion_trigger_bias": {
+        "Hindu": 52.5,
+        "Muslim": 47.5,
+        "Sikh": 45.0,
+        "Christian": 35.0
+      },
+      "mode_bias": {
+        "direct": 45.0,
+        "reasoning": 85.0
+      }
+    }
+  },
+  "encoder_layer_3_head_15": {
+    "layer_type": "encoder",
+    "layer_idx": 3,
+    "head_idx": 15,
+    "metrics": {
+      "scenario_bias_rate": 90.0,
+      "religion_trigger_bias": {
+        "Hindu": 45.0,
+        "Muslim": 42.5,
+        "Sikh": 50.0,
+        "Christian": 35.0
+      },
+      "mode_bias": {
+        "direct": 55.00000000000001,
+        "reasoning": 90.0
+      }
+    }
+  }
+}
